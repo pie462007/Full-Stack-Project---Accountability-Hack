@@ -1,8 +1,8 @@
-const { createHabit } = require('./habitController');
-const { getHabits } = require('./habitController'); 
-const { getHabit } = require('./habitController'); 
-const { deleteHabit } = require('./habitController'); 
-const { updateHabit } = require('./habitController'); 
+const { getHabits } = require('./habitController'); //still need to implement
+const { getHabit } = require('./habitController'); //tester created
+const { createHabit } = require('./habitController'); //tester created
+const { deleteHabit } = require('./habitController'); //tester created
+const { updateHabit } = require('./habitController'); //tester created
 const Habit = require('../models/habitModel');
 jest.mock('../models/habitModel');
 
