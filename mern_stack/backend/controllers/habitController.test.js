@@ -22,7 +22,7 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
 
             await createHabit(req, res);
 
-            expect(Habit.create).toHaveBeenCalledWith({ title: 'Exercise', description: 'Workout every morning' }); //expect the given habit to be created. createHabit()
+            expect(Habit.create).toHaveBeenCalledWith({ title: 'Exercise', description: 'Workout every morning' }); //expect the given habit to be created.
             expect(res.status).toHaveBeenCalledWith(200);
             expect(res.json).toHaveBeenCalledWith(mockHabit);
     });
