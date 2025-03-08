@@ -1,6 +1,8 @@
 const { createHabit } = require('./habitController');
 const { getHabits } = require('./habitController'); 
 const { getHabit } = require('./habitController'); 
+const { deleteHabit } = require('./habitController'); 
+const { updateHabit } = require('./habitController'); 
 const Habit = require('../models/habitModel');
 jest.mock('../models/habitModel');
 
@@ -35,7 +37,7 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.json).toHaveBeenCalledWith({ error: errorMessage });
     });
 
-    test('should return 404 if the ID is invalid', async () => { //test for getHabit
+    test('should return 404 if the ID is invalid', async () => { //test for getHabit()
         const req = { params: {} };
         req.params.id = 'invalid-id'; // Invalid ObjectId
 
@@ -43,5 +45,32 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
 
         expect(res.status).toHaveBeenCalledWith(404);
         expect(res.json).toHaveBeenCalledWith({ error: 'No such habit' });
+    });
+
+    test('should return 200 and the deleted habit if found', async () => { //test for deleteHabit()
+        req = { params: { id: '603d2149e17d3e2f50a49b80' } }; //tester param for delete habit.
+        const mockHabit = { id: '603d2149e17d3e2f50a49b80', title: 'Exercise', description: 'Workout every morning' };
+        Habit.findOneAndDelete.mockResolvedValue(mockHabit);
+
+        await deleteHabit(req, res);
+
+        expect(Habit.findOneAndDelete).toHaveBeenCalledWith({ _id: '603d2149e17d3e2f50a49b80' });
+        expect(res.status).toHaveBeenCalledWith(200);
+        expect(res.json).toHaveBeenCalledWith(mockHabit);
+    });
+
+    test('should return 200 and the updated habit if found', async () => { //test for updateHabit().
+        req = { params: { id: '603d2149e17d3e2f50a49b80' } };
+        const mockHabit = { id: '603d2149e17d3e2f50a49b80', title: 'Updated Title', description: 'Updated Description' };
+        Habit.findOneAndUpdate.mockResolvedValue(mockHabit);
+
+        await updateHabit(req, res);
+
+        expect(Habit.findOneAndUpdate).toHaveBeenCalledWith(
+            { _id: '603d2149e17d3e2f50a49b80' }, 
+            { ...req.body }
+        );
+        expect(res.status).toHaveBeenCalledWith(200);
+        expect(res.json).toHaveBeenCalledWith(mockHabit);
     });
 });
