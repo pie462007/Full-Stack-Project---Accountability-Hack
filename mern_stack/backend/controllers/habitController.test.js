@@ -16,6 +16,7 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         };
     });
 
+    //Tests for createHabit
     test('should create a habit and return 200 with the habit object', async () => { //test for createHabit()
             const mockHabit = { id: '123', title: 'Exercise', description: 'Workout every morning' };
             Habit.create.mockResolvedValue(mockHabit);
@@ -37,6 +38,8 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.json).toHaveBeenCalledWith({ error: errorMessage });
     });
 
+
+    //Tests for getHabit
     test('should return 404 if the ID is invalid', async () => { //test for getHabit()
         const req = { params: {} };
         req.params.id = 'invalid-id'; // Invalid ObjectId
@@ -47,6 +50,8 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.json).toHaveBeenCalledWith({ error: 'No such habit' });
     });
 
+
+    //Tests for deleteHabit
     test('should return 200 and the deleted habit if found', async () => { //test for deleteHabit()
         req = { params: { id: '603d2149e17d3e2f50a49b80' } }; //tester param for delete habit.
         const mockHabit = { id: '603d2149e17d3e2f50a49b80', title: 'Exercise', description: 'Workout every morning' };
@@ -59,6 +64,34 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.json).toHaveBeenCalledWith(mockHabit);
     });
 
+    test('should return 404 if the id is not a valid ObjectId', async () => {
+        // Test case where the ID is not valid
+        req = { params: { id: 'invalid-id' } };
+        //req.params.id = 'invalid-id';
+
+        await deleteHabit(req, res);
+
+        expect(res.status).toHaveBeenCalledWith(404);
+        expect(res.json).toHaveBeenCalledWith({ error: 'No such habit' });
+    });
+
+    test('should return 404 if the habit is not found in the database', async () => {
+        // Test case where the habit does not exist
+        req = { params: { id: '60c72b2f9b1d8c001f8e4d4b' } };
+        //req.params.id = '60c72b2f9b1d8c001f8e4d4b'; // An example of an ID that doesn't exist
+
+        // Mock the Habit.findOneAndDelete method to return null (habit not found)
+        Habit.findOneAndDelete = jest.fn().mockResolvedValue(null);
+
+        await deleteHabit(req, res);
+
+        expect(res.status).toHaveBeenCalledWith(404);
+        expect(res.json).toHaveBeenCalledWith({ error: 'No such habit' });
+    });
+
+    
+
+    //Tests for updateHabit
     test('should return 200 and the updated habit if found', async () => { //test for updateHabit().
         req = { params: { id: '603d2149e17d3e2f50a49b80' } };
         const mockHabit = { id: '603d2149e17d3e2f50a49b80', title: 'Updated Title', description: 'Updated Description' };
