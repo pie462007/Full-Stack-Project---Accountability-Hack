@@ -106,4 +106,27 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.json).toHaveBeenCalledWith(mockHabit);
     });
+
+    test('should return 200 and the habit if found', async () => {
+        req = { params: { id: '603d2149e17d3e2f50a49b80' } }; // Valid ObjectId
+        const mockHabit = { id: '603d2149e17d3e2f50a49b80', title: 'Exercise', description: 'Workout every morning' };
+        Habit.findById.mockResolvedValue(mockHabit);
+    
+        await getHabit(req, res);
+    
+        expect(Habit.findById).toHaveBeenCalledWith('603d2149e17d3e2f50a49b80');
+        expect(res.status).toHaveBeenCalledWith(200);
+        expect(res.json).toHaveBeenCalledWith(mockHabit);
+    });
+    test('should return 404 if the habit does not exist', async () => {
+        req = { params: { id: '603d2149e17d3e2f50a49b80' } }; // Valid ObjectId
+        Habit.findById.mockResolvedValue(null); // Simulate habit not found
+    
+        await getHabit(req, res);
+    
+        expect(Habit.findById).toHaveBeenCalledWith('603d2149e17d3e2f50a49b80');
+        expect(res.status).toHaveBeenCalledWith(404);
+        expect(res.json).toHaveBeenCalledWith({ error: 'No such habit' });
+    });
+        
 });
