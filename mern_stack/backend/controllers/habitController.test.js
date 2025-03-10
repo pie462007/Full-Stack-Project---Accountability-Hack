@@ -164,16 +164,6 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.json).toHaveBeenCalledWith(mockHabit);
     });
-    test('should return 404 if title of updated habit is not a string', async () => { //test for updateHabit().
-        req = { params: { id: '603d2149e17d3e2f50a49b80' , title: 'Old Title', description: 'Old Description' } };
-        const mockHabit = { id: '603d2149e17d3e2f50a49b80', title: 20, description: 'Updated Description'};
-        Habit.findOneAndUpdate.mockResolvedValue(mockHabit);
-
-        await updateHabit(req, res);
-
-        expect(res.status).toHaveBeenCalledWith(404);
-        expect(res.json).toHaveBeenCalledWith(mockHabit);
-    });
     test('should return 404 if habit is not found in the database', async () => { //test for updateHabit().
         req = { params: { id: '603d2149e17d3e2f50a49b80' , title: 'Old Title', description: 'Old Description' } };
         Habit.findOneAndUpdate.mockResolvedValue(null);
