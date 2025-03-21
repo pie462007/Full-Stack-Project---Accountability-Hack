@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 // components
 import HabitDetails from '../components/HabitDetails'
+import HabitForm from '../components/HabitForm'
 
 const Home = () => {
     const [habits, setHabits] = useState(null)
@@ -26,6 +27,7 @@ const Home = () => {
                     <HabitDetails key={habit._id} habit={habit} />
                 ))}
             </div>
+            <HabitForm />
         </div>
     )
 }
