@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/HabitDetails.css'
 
 const HabitDetails = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
 

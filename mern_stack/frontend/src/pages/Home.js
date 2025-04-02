@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import '../styles/Home.css'
 
 // components
 import HabitDetails from '../components/HabitDetails'

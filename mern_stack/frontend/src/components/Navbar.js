@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom' //npm install react-router-dom
-import Friends from '../pages/Friends';
-import Login from '../pages/Login';
-import Home from '../pages/Home';
+// import Friends from '../pages/Friends';
+// import Login from '../pages/Login';
+// import Home from '../pages/Home';
+import '../styles/Navbar.css'
 
 const Navbar = () => {
 
