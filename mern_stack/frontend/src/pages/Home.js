@@ -27,7 +27,7 @@ const Home = () => {
                     <HabitDetails key={habit._id} habit={habit} />
                 ))}
             </div>
-            <HabitForm />
+            <HabitForm setHabits={setHabits} />
         </div>
     )
 }

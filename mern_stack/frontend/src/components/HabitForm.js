@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const HabitForm = () => {
+const HabitForm = ({setHabits}) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [error, setError] = useState(null)
@@ -23,10 +23,14 @@ const HabitForm = () => {
         if(!response.ok) {
             setError(json.error)
         }
+
         if (response.ok) {
             setTitle('')
             setDescription('')
             setError(null)
+        
+            const updatedHabits = await fetch("api/habits").then((res) =>res.json());
+            setHabits(updatedHabits);
             console.log('new habit added', json)
         }
     }
