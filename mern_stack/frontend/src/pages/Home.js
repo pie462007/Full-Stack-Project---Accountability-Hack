@@ -20,11 +20,18 @@ const Home = () => {
         fetchHabits()
     }, [])
 
+    const handleDelete = (deletedId) => {
+        setHabits(prevHabits => 
+            prevHabits.filter(habit => habit._id !== deletedId)
+        );
+    };
+
+
     return (
         <div className="home">
             <div class="habits">
                 {habits && habits.map((habit) => (
-                    <HabitDetails key={habit._id} habit={habit} />
+                    <HabitDetails key={habit._id} habit={habit} onDelete={handleDelete}  />
                 ))}
             </div>
             <HabitForm setHabits={setHabits} />

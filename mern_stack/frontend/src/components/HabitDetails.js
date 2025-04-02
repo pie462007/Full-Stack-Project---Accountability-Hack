@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const HabitDetails = ({ habit }) => { // add onDelete to chagne UI on deletion
+const HabitDetails = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
 
     const handleDelete = async () => {
         const response = await fetch(`/api/habits/${habit._id}`, {
@@ -8,7 +8,7 @@ const HabitDetails = ({ habit }) => { // add onDelete to chagne UI on deletion
         })
 
         if (response.ok) {
-            //onDelete(habit._id) // Update UI after deletion
+            onDelete(habit._id) // Update UI after deletion
         }
     }
 
