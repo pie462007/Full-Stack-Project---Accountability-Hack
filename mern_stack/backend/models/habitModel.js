@@ -10,7 +10,7 @@ const habitSchema = new Schema({
     description: {
         type: String
     },
-    completions: [{
+    completions: [{ // new content
         date: {
             type: Date,
             default: Date.now
