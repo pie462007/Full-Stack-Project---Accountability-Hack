@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import '../styles/HabitDetails.css'
+import '../styles/HabitCard.css'
 import Popup from './UpdatePopup'
 
-const HabitDetails = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
+const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
     const [buttonPopup, setButtonPopup] = useState(false)
     const [titleInput, setTitleInput] = useState(habit.title)
     const [descriptionInput, setDescriptionInput] = useState(habit.description)
@@ -98,4 +98,4 @@ const HabitDetails = ({ habit, onDelete }) => { // add onDelete to chagne UI on 
     )
 }
 
-export default HabitDetails
+export default HabitCard

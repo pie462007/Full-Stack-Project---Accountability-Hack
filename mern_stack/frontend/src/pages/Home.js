@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../styles/Home.css'
 
 // components
-import HabitDetails from '../components/HabitDetails'
+import HabitCard from '../components/HabitCard'
 import HabitForm from '../components/HabitForm'
 
 const Home = () => {
@@ -32,7 +32,7 @@ const Home = () => {
         <div className="home">
             <div class="habits">
                 {habits && habits.map((habit) => (
-                    <HabitDetails key={habit._id} habit={habit} onDelete={handleDelete}  />
+                    <HabitCard key={habit._id} habit={habit} onDelete={handleDelete}  />
                 ))}
             </div>
             <HabitForm setHabits={setHabits} />

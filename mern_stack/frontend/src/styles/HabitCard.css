@@ -5,7 +5,11 @@
     padding: 20px;
     position: relative;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-
+    border: 2px solid black;
+  }
+  .habit-details:hover {
+    transition: 0.7s ease;
+    transform: scale(1.05);
   }
   .habit-details h4 {
     margin: 0 0 10px 0;
