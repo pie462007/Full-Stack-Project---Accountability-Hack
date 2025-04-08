@@ -82,19 +82,33 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
     }
 
     return (
-        <div className={`habit-details ${completed ? 'completed' : ''}`}>
-            <div className="habit.title">
-                <h4 className={completed ? 'strikethrough' : ''}>{habit.title}</h4>
-                {completed && <span className="completed-box">Completed</span>}
+        <div className = "habit-card">
+            <div className = "habit-info">
+                <h3>{habit.title}</h3>
+                <p>{habit.description}</p>
+                <p>{habit.createdAt}</p>
             </div>
-            <p><strong>Description: </strong>{habit.description}</p>
-            <p>{habit.createdAt}</p>
-            <button onClick={handleCompleted}>
-                {completed ? 'undo complete' : 'mark as complete'}
-            </button>
-            <button onClick={handleDelete}>delete habit</button>
-            <button onClick={enableUpdate}>update habit</button>
+            <div className="dropdown">
+                <button className="menu-btn">•••</button>
+                <div className="dropdown-content">
+                    <a onClick={enableUpdate} href="#">Edit</a>
+                    <a onClick={handleDelete} href="#" className="delete-option">Delete</a>
+                </div>
+            </div>
         </div>
+        // <div className={`habit-details ${completed ? 'completed' : ''}`}>
+        //     <div className="habit.title">
+        //         <h4 className={completed ? 'strikethrough' : ''}>{habit.title}</h4>
+        //         {completed && <span className="completed-box">Completed</span>}
+        //     </div>
+        //     <p><strong>Description: </strong>{habit.description}</p>
+        //     <p>{habit.createdAt}</p>
+        //     <button onClick={handleCompleted}>
+        //         {completed ? 'undo complete' : 'mark as complete'}
+        //     </button>
+        //     <button onClick={handleDelete}>delete habit</button>
+        //     <button onClick={enableUpdate}>update habit</button>
+        // </div>
     )
 }
 

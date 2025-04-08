@@ -1,4 +1,91 @@
-.habit-details {
+.habit-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  position: relative;
+  max-width: 500px;
+  border: 2px solid black;
+}
+
+.habit-info h3 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.habit-info p {
+  margin: 0.25rem 0;
+  color: #383838;
+}
+
+.streak {
+  font-weight: 100;
+}
+
+.dropdown {
+  position: relative;
+  margin-top: 5px;
+}
+
+.menu-btn {
+  padding: 4px 8px;
+  background-color: inherit;
+  color: #161616 !important;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  font-size: 20px;
+  cursor: pointer;
+  width: 50px;
+  text-align: left;
+  position: relative;
+}
+
+.menu-btn::after {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 0 6px 6px;
+  width: 85px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: rgb(7, 7, 7);
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #c0c0c0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.delete-option {
+  color: #e93d3d !important;
+  font-weight: 600;
+}
+
+/* .habit-details {
     background: #fff;
     border-radius: 4px;
     margin: 20px auto;
@@ -42,7 +129,6 @@
     margin-left: 12px;
     display: inline-block;
 
-    /* animation */
     opacity: 0;
     transform: scale(0.8);
     animation: fadeInScale 0.3s forwards;
@@ -59,4 +145,4 @@
   text-decoration: line-through;
   text-decoration-thickness: 3px;
   font-weight: 500;
-}
+} */
