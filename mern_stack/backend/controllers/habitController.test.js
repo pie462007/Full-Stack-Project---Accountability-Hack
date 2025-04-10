@@ -3,6 +3,7 @@ const { getHabit } = require('./habitController'); //tester created
 const { createHabit } = require('./habitController'); //tester created
 const { deleteHabit } = require('./habitController'); //tester created
 const { updateHabit } = require('./habitController'); //tester created
+const { completeHabit } = require('./habitController');
 const Habit = require('../models/habitModel');
 jest.mock('../models/habitModel');
 
@@ -173,5 +174,71 @@ describe('Habit Controller Tests', () => { //description of the testers that wil
         expect(res.status).toHaveBeenCalledWith(404);
         expect(res.json).toHaveBeenCalledWith({ error: 'No such habit' });
     });
+
+    //Tests for completeHabit (more testing needed) 
+    //Cannot figure these out, will come back to them at a later point
+    /*test('Adding a completion for today updates streaks correctly', async () => {
+        //jest.spyOn(global, 'Date').mockImplementation(() => new Date('2025-04-08'));
+        const habit = {
+            completions: [
+                { date: new Date('2025-04-06'), completed: true },
+                { date: new Date('2025-04-07'), completed: true }
+            ],
+            save: jest.fn() // Mock save function
+        };
+        const req = { params: { id: 'validId' } };
+        const res = {
+            status: jest.fn(() => ({
+                json: jest.fn()
+            }))
+        };
+
+        const fixedDate = new Date('2025-04-08');
+        await completeHabit(req, res, fixedDate);
+
+        // Check that today's completion was added
+        //expect(habit.completions.some(entry => new Date(entry.date).toDateString() === today.toDateString())).toBe(true);
+        console.log('Matching Date:', fixedDate.toDateString());
+        console.log('Matching Dates:', fixedDate)
+        console.log('Existing Dates:', habit.completions.map(entry => new Date(entry.date).toDateString()));
+        console.log('\n\nFixed Date (Mocked Today):', fixedDate.toISOString()); // Log fixed mocked "today" in UTC
+        console.log('Existing Dates (UTC):', habit.completions.map(entry => new Date(entry.date).toISOString()));
+
+        //const todayUTC = fixedDate.toISOString().split('T')[0]; // Extract just the UTC date part (YYYY-MM-DD)
+        //const completionDatesUTC = habit.completions.map(entry => new Date(entry.date).toISOString().split('T')[0]);
+        //expect(completionDatesUTC).toContain(todayUTC); // Check if today's date exists in the completions
+
+        //expect(habit.completions.length).toBe(3); // Includes today's completion
+        console.log('Curr Streak', habit.currentStreak)
+        expect(habit.currentStreak).toBe(3);
+        expect(habit.longestStreak).toBe(3);
+        //jest.restoreAllMocks();
+    });
+
+    
+    test('Removing today\'s completion updates streaks correctly', async () => {
+        const today = new Date();
+        const habit = {
+            completions: [
+                { date: new Date('2025-04-01'), completed: true },
+                { date: today, completed: true }
+            ],
+            save: jest.fn() // Mock save function
+        };
+        const req = { params: { id: 'validId' } };
+        const res = {
+            status: jest.fn(() => ({
+                json: jest.fn()
+            }))
+        };
+
+        await completeHabit(req, res);
+
+        // Check that today's completion was removed
+        expect(habit.completions.some(entry => new Date(entry.date).toDateString() === today.toDateString())).toBe(false);
+        expect(habit.completions.length).toBe(1); // Today's completion removed
+        expect(habit.currentStreak).toBe(1);
+        expect(habit.longestStreak).toBe(1);
+    });*/
         
 });

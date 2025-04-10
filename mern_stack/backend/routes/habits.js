@@ -5,6 +5,7 @@ const {
     getHabit,
     deleteHabit,
     updateHabit,
+    completeHabit
 } = require('../controllers/habitController')
 
 const router = express.Router()
@@ -23,5 +24,8 @@ router.delete('/:id', deleteHabit)
 
 // UPDATE a habit
 router.patch('/:id', updateHabit)
+
+// COMPLETE a habit
+router.patch('/:id/complete', completeHabit);
 
 module.exports = router

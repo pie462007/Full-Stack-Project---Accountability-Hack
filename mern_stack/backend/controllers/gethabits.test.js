@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const { getHabit } = require('./habitController'); // Adjust the path if necessary
-const Habit = require('../models/habit');          // Adjust the path if necessary
+const Habit = require('../models/habitModel');          // Adjust the path if necessary
 
-jest.mock('../models/habit'); // Mock the Habit model to avoid actual DB calls
+jest.mock('../models/habitModel');; // Mock the Habit model to avoid actual DB calls
 
 describe('getHabit', () => {
   let req, res;
