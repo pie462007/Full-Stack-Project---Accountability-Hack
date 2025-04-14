@@ -2,7 +2,7 @@
 //import '../styles/HabitDetails.css'
 import { useEffect, useState } from 'react'
 import '../styles/HabitCard.css'
-import Popup from './UpdatePopup'
+import Popup from './Popup'
 
 const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
     const [buttonPopup, setButtonPopup] = useState(false)
@@ -63,13 +63,13 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
 
     const handleUpdate = async (e) => {
         e.preventDefault()
+        setButtonPopup(false)
 
-
-        const response = await fetch('/api/habits', {
+        const response = await fetch(`/api/habits/${habit._id}`, {
             method: 'PATCH',
             body: JSON.stringify({
-                updatedTitle: titleInput,
-                updatedDescription: descriptionInput
+                title: titleInput,
+                description: descriptionInput
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -99,23 +99,6 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
 
         if (response.ok){
             setButtonPopup(true);
-            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                <p>Change the title and/or description, but neither must be empty</p>
-                <label>Title:</label>
-                <input
-                    type="text"
-                    onChange={(e) => setTitleInput(e.target.value)}
-                    value={titleInput}
-                />
-
-                <label>Description:</label>
-                <input
-                    type="text"
-                    onChange={(e) => setDescriptionInput(e.target.value)}
-                    value={descriptionInput}
-                />
-                <button>onClick={handleUpdate}confirm</button>
-            </Popup>
         }
     }
 
@@ -141,6 +124,24 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
                 <a onClick={handleDelete} href="#" className="delete-option">Delete</a>
             </div>
         </div>
+        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                <h3>Updating Habit</h3>
+                <p>Change the title and/or description, but neither must be empty</p>
+                <label>Title:</label>
+                <input
+                    type="text"
+                    onChange={(e) => setTitleInput(e.target.value)}
+                    value={titleInput}
+                />
+
+                <label>Description:</label>
+                <input
+                    type="text"
+                    onChange={(e) => setDescriptionInput(e.target.value)}
+                    value={descriptionInput}
+                />
+                <button onClick={handleUpdate}>confirm</button>
+        </Popup>
     </div>
 
         //<div className = "habit-card">
