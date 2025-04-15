@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Friends from './pages/Friends';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
               <Route
                 path="/signup"
                 element={<Signup />}
+              />
+              <Route
+                path="/Friends"
+                element={<Friends />}
               />
             </Routes>
           </div>
