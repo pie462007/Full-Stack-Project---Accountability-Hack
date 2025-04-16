@@ -7,8 +7,11 @@ const {
     updateHabit,
     completeHabit
 } = require('../controllers/habitController')
+const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
+
+router.use(requireAuth)
 
 // get all habits
 router.get('/', getHabits)

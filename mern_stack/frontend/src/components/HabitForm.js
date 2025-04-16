@@ -1,13 +1,20 @@
 import { useState } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const HabitForm = ({ setHabits }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [error, setError] = useState(null);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const {user} = useAuthContext()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!user) {
+            setError("You must be logged in")
+            return
+        }
 
         const habit = { title, description };
 
@@ -16,6 +23,7 @@ const HabitForm = ({ setHabits }) => {
             body: JSON.stringify(habit),
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             },
         });
 

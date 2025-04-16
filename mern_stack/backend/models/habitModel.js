@@ -36,6 +36,10 @@ const habitSchema = new Schema({
     goal: {
         type: Number,  // Target completions per period
         default: 1
+    },
+    user_id: {
+        type: String,
+        required: true
     }
 
 }, { timestamps: true })

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/HabitCard.css'
 import Popup from './Popup'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
     const [buttonPopup, setButtonPopup] = useState(false)
@@ -11,27 +12,39 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
     const [error, setError] = useState(null)
     const [completed, setCompleted] = useState(false)
     const [habitData, setHabitData] = useState(null)
+    const {user} = useAuthContext()
 
     useEffect(() => {
         const fetchHabitData = async () => {
             try {
-                const response = await fetch(`/api/habits/${habit._id}`);
+                const response = await fetch(`/api/habits/${habit._id}`, {
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`
+                    }
+                });
                 if (!response.ok) {
                     throw new Error('Failed to fetch habit data');
                 }
                 const data = await response.json();
-                setHabitData(data); // Store the habit data, including streak info
+                setHabitData(data);
             } catch (error) {
                 console.error('Error fetching habit data:', error);
             }
         };
+        
         fetchHabitData();
     }, [habit._id]); // Runs when `habit._id` changes
 
     
-    const handleDelete = async () => {
+    const handleDelete = async () => { 
+        if (!user) {
+            return
+        }
         const response = await fetch(`/api/habits/${habit._id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
 
         if (response.ok) {
@@ -72,7 +85,8 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
                 description: descriptionInput
             }),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
         })
 

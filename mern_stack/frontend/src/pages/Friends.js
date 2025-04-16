@@ -1,4 +1,9 @@
+import { useAuthContext } from "../hooks/useAuthContext";
+
 function Friends() {
+
+    const {user} = useAuthContext()
+
     return (
         <div className="friends-div" style={{ display: "flex", gap: "20px" }}>
             {/* Finding Friends Section */}
