@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react'
 import '../styles/HabitCard.css'
 import Popup from './Popup'
+import { useHabitsContext } from '../hooks/useHabitsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on deletion
+const HabitCard = ({ habit}) => { 
+    const { dispatch } = useHabitsContext()
     const [buttonPopup, setButtonPopup] = useState(false)
     const [titleInput, setTitleInput] = useState(habit.title)
     const [descriptionInput, setDescriptionInput] = useState(habit.description)
@@ -47,8 +49,10 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
             }
         })
 
+        const json = await response.json()
+
         if (response.ok) {
-            onDelete(habit._id) // Update UI after deletion
+            dispatch({type: 'DELETE_HABIT', payload: json})
         }
     }
 
@@ -68,7 +72,7 @@ const HabitCard = ({ habit, onDelete }) => { // add onDelete to chagne UI on del
         })
 
         const updateCompletion = await response.json();
-        setHabitData(updateCompletion);
+        // setHabitData(updateCompletion);
         console.log('Updated Habit: ', updateCompletion)
         //setHabitData(updateCompletion);
 

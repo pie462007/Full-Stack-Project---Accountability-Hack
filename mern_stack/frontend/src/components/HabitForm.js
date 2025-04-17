@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useHabitsContext } from '../hooks/useHabitsContext'
 import { useAuthContext } from "../hooks/useAuthContext";
 
-const HabitForm = ({ setHabits }) => {
+const HabitForm = ({}) => {
+    const { dispatch } = useHabitsContext()
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [error, setError] = useState(null);
@@ -37,10 +39,8 @@ const HabitForm = ({ setHabits }) => {
             setTitle('');
             setDescription('');
             setError(null);
-
-            const updatedHabits = await fetch('/api/habits').then((res) => res.json());
-            setHabits(updatedHabits);
             console.log('new habit added', json);
+            dispatch({type: 'CREATE_HABIT', payload: json})
 
             setIsPopupOpen(false); // Close the popup after successful submission
         }
