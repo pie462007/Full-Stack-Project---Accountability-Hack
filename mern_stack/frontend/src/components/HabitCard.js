@@ -112,7 +112,10 @@ const HabitCard = ({ habit}) => {
 
     const enableUpdate = async () => {
         const response = await fetch(`/api/habits/${habit._id}`, {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
 
         if (response.ok){
