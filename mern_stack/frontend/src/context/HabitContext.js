@@ -16,6 +16,13 @@ export const HabitsReducer = (state, action) => {
             return {
                 habits: state.habits.filter((h) => h._id !== action.payload._id)
             }
+        case 'TOGGLE_COMPLETE':
+            return{
+                habits: state.habits.map((h) => 
+                    h._id === action.payload._id 
+                ? {...h, completed: action.payload.completed,currentStreak: action.payload.currentStreak} 
+                : h)
+            }
         default:
             return state
     }
