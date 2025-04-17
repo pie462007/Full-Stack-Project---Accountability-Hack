@@ -14,7 +14,7 @@ export const HabitsReducer = (state, action) => {
             }
         case 'DELETE_HABIT':
             return {
-                habits: state.habits.filter((h) => h.id !== action.payload._id)
+                habits: state.habits.filter((h) => h._id !== action.payload._id)
             }
         default:
             return state
