@@ -7,14 +7,16 @@ import { useHabitsContext } from '../hooks/useHabitsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 const HabitCard = ({ habit}) => { 
-    const { habits, dispatch } = useHabitsContext()
+    const { dispatch } = useHabitsContext()
     const [buttonPopup, setButtonPopup] = useState(false)
     const [titleInput, setTitleInput] = useState(habit.title)
     const [descriptionInput, setDescriptionInput] = useState(habit.description)
     const [error, setError] = useState(null)
-    const [isComplete, setIsComplete] = useState(false)
-    const currentHabit = habits?.find(h => h._id === habit._id);
-    const [habitData, setHabitData] = useState(null)
+    const [completed, setCompleted] = useState(habit.completed)
+    const [habitData, setHabitData] = useState({
+        title: habit.title,
+        description: habit.description,
+    })
     const {user} = useAuthContext()
 
     useEffect(() => {
@@ -29,7 +31,7 @@ const HabitCard = ({ habit}) => {
                     throw new Error('Failed to fetch habit data');
                 }
                 const data = await response.json();
-                setHabitData(data);
+                //setHabitData(data);
             } catch (error) {
                 console.error('Error fetching habit data:', error);
             }
@@ -38,13 +40,6 @@ const HabitCard = ({ habit}) => {
         fetchHabitData();
     }, [habit._id]); // Runs when `habit._id` changes
 
-    useEffect(() => {
-        const updatedHabit = habits?.find(h => h._id === habit._id);
-        if (updatedHabit) {
-            setHabitData(updatedHabit); 
-        }
-        //console.log("Updated habits from context:", habits)
-    }, [habits]);
     
     const handleDelete = async () => { 
         if (!user) {
@@ -64,41 +59,33 @@ const HabitCard = ({ habit}) => {
         }
     }
 
+    //const [completed, setCompleted] = useState(false)
+    //const handleCompleted = () => {
+    //    setCompleted(prev => !prev)
+    //}
 
     const handleCompleted = async () => {
-        if (!user) {
-            return;
-        }
-        setIsComplete(prev => !prev)
+        setCompleted(prev => !prev)
         console.log('complete button clicked')
         const response = await fetch(`/api/habits/${habit._id}/complete`, {
             method: 'PATCH', 
-	        body: JSON.stringify({ completed: !habit.completed }), 
-            headers: { 
-                'Content-Type': 'application/json' ,
-                'Authorization': `Bearer ${user.token}`},
+            //body: JSON.stringify({ completed: !completed }),
+	        body: JSON.stringify({ completed: true }), 
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            }
         })
-        
-        if(!response.ok){
-            //console.error("Error updating completion:", await response.text());
-            setIsComplete(prev => !prev); 
-            return;
-        }
 
         const updateCompletion = await response.json();
-        
-        if (response.ok) {
-            dispatch({ type: 'TOGGLE_COMPLETE', payload: updateCompletion});
-            console.log("Dispatched updated habit within handlCom:", updateCompletion)
-        }
-
+        // setHabitData(updateCompletion);
         console.log('Updated Habit: ', updateCompletion)
+        //setHabitData(updateCompletion);
 
     }
 
     const handleUpdate = async (e) => {
         e.preventDefault()
-        setButtonPopup(false)
 
         const response = await fetch(`/api/habits/${habit._id}`, {
             method: 'PATCH',
@@ -116,9 +103,11 @@ const HabitCard = ({ habit}) => {
 
         if(!response.ok) {
             setError(json.error)
-            updateDefaultValues(habit.title, habit.description)
+            updateDefaultValues(habitData.title, habitData.description)
         }
-        else{
+        else{  
+            //dispatch({type: 'EDIT_HABIT', payload: json})
+            setButtonPopup(false)
             updateDefaultValues(titleInput, descriptionInput)
         }
     }
@@ -126,6 +115,10 @@ const HabitCard = ({ habit}) => {
     const updateDefaultValues = async (defaultTitle, defaultDescription) => {
         setTitleInput(defaultTitle)
         setDescriptionInput(defaultDescription)
+        setHabitData({
+            title: defaultTitle,
+            description: defaultDescription
+        })
     }
 
     const enableUpdate = async () => {
@@ -137,6 +130,7 @@ const HabitCard = ({ habit}) => {
         })
 
         if (response.ok){
+            updateDefaultValues(habitData.title, habitData.description)
             setButtonPopup(true);
         }
     }
@@ -144,16 +138,16 @@ const HabitCard = ({ habit}) => {
     
 
     return (
-        <div className={`habit-card ${currentHabit?.completed ? 'completed' : ''}`}>
+        <div className={`habit-card ${completed ? 'completed' : ''}`}>
             <div className="habit-info">
-                <h3 className={currentHabit?.completed ? 'strikethrough' : ''}>{currentHabit?.title}</h3>
-                <p>{currentHabit?.description}</p>
-                <p>{currentHabit?.createdAt}</p>
+                <h3 className={completed ? 'strikethrough' : ''}>{habitData.title}</h3>
+                <p>{habitData.description}</p>
+                <p>{habit.createdAt}</p>
             </div>
             <div className="actions-bottom-right">
                 <p className="streak-text">Streak: {habit.currentStreak}</p>
                 <button onClick={handleCompleted}>
-                    {isComplete ? 'Undo Complete' : 'Mark as Complete'}
+            {completed ? 'Undo Complete' : 'Mark as Complete'}
             </button>
         </div>
         <div className="dropdown">
@@ -180,6 +174,7 @@ const HabitCard = ({ habit}) => {
                     value={descriptionInput}
                 />
                 <button onClick={handleUpdate}>confirm</button>
+                {error && <div className="error">{error}</div>}
         </Popup>
     </div>
 
