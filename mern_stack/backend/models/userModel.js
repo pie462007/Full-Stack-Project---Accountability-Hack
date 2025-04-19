@@ -12,10 +12,20 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    friendship: { 
+        pending: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            default: []
+        }],
+        accepted: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            default: []
+        }]
     }
 })
-
-
 
 //static login method
 userSchema.statics.login = async function(email, password) {

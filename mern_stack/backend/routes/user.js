@@ -1,11 +1,12 @@
 const express = require("express")
 const router = express.Router()
 
-const { signupUser, loginUser } = require('../controllers/userController')
-//login route
-router.post('/login', loginUser)
+const { signupUser, loginUser, sendFriendRequest, addFriend } = require('../controllers/userController')
 
-// sign up route
+
+router.post('/login', loginUser)
 router.post('/signup', signupUser)
+router.post('/:targetUserId/pending', sendFriendRequest)
+router.post('/:userId/accepted', addFriend)
 
 module.exports = router
