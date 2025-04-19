@@ -1,0 +1,45 @@
+
+.friends-div {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .find-friends, .manage-friends {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .friends-search-input {
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-results {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .search-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 4px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .search-item button {
+    background: #1aac83;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .search-item button:hover {
+    background: #17a06d;
+  }
+  
