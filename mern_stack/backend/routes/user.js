@@ -1,12 +1,23 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-const { signupUser, loginUser, sendFriendRequest, addFriend } = require('../controllers/userController')
+const {
+  signupUser,
+  loginUser,
+  sendFriendRequest,
+  addFriend,
+  searchUsers,
+  getUser
+} = require("../controllers/userController");
 
+// Auth
+router.post("/login", loginUser);
+router.post("/signup", signupUser);
 
-router.post('/login', loginUser)
-router.post('/signup', signupUser)
-router.post('/:targetUserId/pending', sendFriendRequest)
-router.post('/:userId/accepted', addFriend)
+// Friend functionality
+router.post("/send-friend-request", sendFriendRequest);
+router.post("/accept-friend-request", addFriend);
+router.get("/", searchUsers); // /api/user?search=...
+router.get("/:id", getUser); // /api/user/:id for pending requests
 
-module.exports = router
+module.exports = router;
