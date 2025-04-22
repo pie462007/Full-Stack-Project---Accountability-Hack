@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../styles/HabitForm.css'
 import { useHabitsContext } from '../hooks/useHabitsContext'
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -48,7 +49,7 @@ const HabitForm = ({}) => {
 
     return (
         <div>
-            <button onClick={() => setIsPopupOpen(true)}>Add New Habit</button> {/* Button to open popup */}
+            <button className="add-habit-btn" onClick={() => setIsPopupOpen(true)}>Add New Habit</button>
     
             {isPopupOpen && (
                 <div className="popup">

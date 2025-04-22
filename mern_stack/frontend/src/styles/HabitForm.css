@@ -1,0 +1,23 @@
+/* Add Habit Button */
+.add-habit-btn {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-habit-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  .add-habit-btn:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    transform: scale(0.95); /* Slightly shrink on click */
+  }
