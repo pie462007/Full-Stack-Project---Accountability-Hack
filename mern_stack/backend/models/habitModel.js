@@ -10,15 +10,8 @@ const habitSchema = new Schema({
     description: {
         type: String
     },
-    completions: [{ // new content
-        date: {
-            type: Date,
-            default: Date.now
-        },
-        completed: {
-            type: Boolean,
-            default: false
-        }
+    completions: [{
+        type: Date
     }],
     currentStreak: {
         type: Number,
@@ -32,10 +25,6 @@ const habitSchema = new Schema({
         type: String,
         enum: ['daily', 'weekly', 'monthly'],
         default: 'daily'
-    },
-    goal: {
-        type: Number,  // Target completions per period
-        default: 1
     },
     user_id: {
         type: String,
