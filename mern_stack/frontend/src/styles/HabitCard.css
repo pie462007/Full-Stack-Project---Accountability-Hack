@@ -119,6 +119,23 @@
     color: #383838;
     font-weight: bold;
 }
+
+.last-completed {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.completed {
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+}
+
+.completed .last-completed {
+    color: #4caf50;
+    font-weight: 500;
+}
 /* .habit-details {
     background: #fff;
     border-radius: 4px;

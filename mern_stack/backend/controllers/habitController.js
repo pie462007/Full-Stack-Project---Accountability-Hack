@@ -83,26 +83,35 @@ const completeHabit = async (req, res) => {
 	if (!habit) { 
 		return res.status(404).json({ error: 'Habit not found' }); 
 	} 
-	const today = new Date(); 
-	const todayDateString = today.toDateString(); 
 
-	const completionIndex = habit.completions.findIndex((entry) => { 
-		const entryDate = new Date(entry.date).toDateString(); 
-		return entryDate === todayDateString; 
-	}); 
-	
-	if (completionIndex === -1) { 
-	// If not completed today, add a new completion 
-		habit.completions.push({ date: today, completed: true }); 
-	} else { // If already completed today, remove the completion entry 
-		habit.completions.splice(completionIndex, 1); 
-	} 
-	
-	console.log('Completions before streak calculation:', habit.completions); 
-	//habit.completions.push({ date: new Date(), completed: true }); 
-	calculateAndUpdateStreaks(habit); 
-	await habit.save(); 
-	res.status(200).json(habit); 
+	const today = new Date();
+	today.setHours(0, 0, 0, 0); // Normalize to start of day
+
+	// Check if habit is already completed for today
+	const isCompletedToday = habit.completions.some(completion => {
+		if (!completion) return false;
+		const completionDate = new Date(completion);
+		completionDate.setHours(0, 0, 0, 0);
+		return completionDate.getTime() === today.getTime();
+	});
+
+	if (isCompletedToday) {
+		// If already completed today, remove the completion
+		habit.completions = habit.completions.filter(completion => {
+			if (!completion) return false;
+			const completionDate = new Date(completion);
+			completionDate.setHours(0, 0, 0, 0);
+			return completionDate.getTime() !== today.getTime();
+		});
+	} else {
+		// If not completed today, add completion
+		habit.completions.push(today.toISOString());
+	}
+
+	// Calculate and update streaks
+	calculateAndUpdateStreaks(habit);
+	await habit.save();
+	res.status(200).json(habit);
 };
 /*const completeHabit = async (req, res, today = new Date()) => { 
 	if (!(today instanceof Date) || isNaN(today.getTime())) {

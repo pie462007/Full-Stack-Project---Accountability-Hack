@@ -12,10 +12,11 @@ const HabitCard = ({ habit}) => {
     const [titleInput, setTitleInput] = useState(habit.title)
     const [descriptionInput, setDescriptionInput] = useState(habit.description)
     const [error, setError] = useState(null)
-    const [completed, setCompleted] = useState(habit.completed)
+    const [isCompleted, setIsCompleted] = useState(false)
     const [habitData, setHabitData] = useState({
         title: habit.title,
         description: habit.description,
+        completions: habit.completions || []
     })
     const {user} = useAuthContext()
 
@@ -31,14 +32,22 @@ const HabitCard = ({ habit}) => {
                     throw new Error('Failed to fetch habit data');
                 }
                 const data = await response.json();
-                //setHabitData(data);
+                setHabitData(data);
+                // Check if habit is completed today
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                setIsCompleted(data.completions.some(completion => {
+                    const completionDate = new Date(completion);
+                    completionDate.setHours(0, 0, 0, 0);
+                    return completionDate.getTime() === today.getTime();
+                }));
             } catch (error) {
                 console.error('Error fetching habit data:', error);
             }
         };
         
         fetchHabitData();
-    }, [habit._id]); // Runs when `habit._id` changes
+    }, [habit._id]);
 
     
     const handleDelete = async () => { 
@@ -59,29 +68,45 @@ const HabitCard = ({ habit}) => {
         }
     }
 
-    //const [completed, setCompleted] = useState(false)
-    //const handleCompleted = () => {
-    //    setCompleted(prev => !prev)
-    //}
-
     const handleCompleted = async () => {
-        setCompleted(prev => !prev)
-        console.log('complete button clicked')
+        setIsCompleted(prev => !prev);
         const response = await fetch(`/api/habits/${habit._id}/complete`, {
-            method: 'PATCH', 
-            //body: JSON.stringify({ completed: !completed }),
-	        body: JSON.stringify({ completed: true }), 
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
             }
-        })
+        });
 
-        const updateCompletion = await response.json();
-        // setHabitData(updateCompletion);
-        console.log('Updated Habit: ', updateCompletion)
-        //setHabitData(updateCompletion);
+        const updatedHabit = await response.json();
+        if (response.ok) {
+            setHabitData(updatedHabit);
+        }
+    }
 
+    // Get last completed date
+    const getLastCompletedDate = () => {
+        if (!habitData.completions || habitData.completions.length === 0) {
+            return 'Never completed';
+        }
+        
+        try {
+            // Filter out any invalid dates and convert to Date objects
+            const validDates = habitData.completions
+                .filter(date => date && !isNaN(new Date(date).getTime()))
+                .map(date => new Date(date));
+            
+            if (validDates.length === 0) {
+                return 'Never completed';
+            }
+            
+            // Get the most recent date
+            const lastCompletion = new Date(Math.max(...validDates));
+            return lastCompletion.toLocaleDateString();
+        } catch (error) {
+            console.error('Error formatting last completed date:', error);
+            return 'Never completed';
+        }
     }
 
     const handleUpdate = async (e) => {
@@ -138,26 +163,26 @@ const HabitCard = ({ habit}) => {
     
 
     return (
-        <div className={`habit-card ${completed ? 'completed' : ''}`}>
+        <div className={`habit-card ${isCompleted ? 'completed' : ''}`}>
             <div className="habit-info">
-                <h3 className={completed ? 'strikethrough' : ''}>{habitData.title}</h3>
+                <h3 className={isCompleted ? 'strikethrough' : ''}>{habitData.title}</h3>
                 <p>{habitData.description}</p>
-                <p>{habit.createdAt}</p>
+                <p className="last-completed">Last completed: {getLastCompletedDate()}</p>
             </div>
             <div className="actions-bottom-right">
                 <p className="streak-text">Streak: {habit.currentStreak}</p>
                 <button onClick={handleCompleted}>
-            {completed ? 'Undo Complete' : 'Mark as Complete'}
-            </button>
-        </div>
-        <div className="dropdown">
-            <button className="menu-btn">•••</button>
-            <div className="dropdown-content">
-                <a onClick={enableUpdate} href="#">Edit</a>
-                <a onClick={handleDelete} href="#" className="delete-option">Delete</a>
+                    {isCompleted ? 'Undo Complete' : 'Mark as Complete'}
+                </button>
             </div>
-        </div>
-        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <div className="dropdown">
+                <button className="menu-btn">•••</button>
+                <div className="dropdown-content">
+                    <a onClick={enableUpdate} href="#">Edit</a>
+                    <a onClick={handleDelete} href="#" className="delete-option">Delete</a>
+                </div>
+            </div>
+            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <h3>Updating Habit</h3>
                 <p>Change the title and/or description, but neither must be empty</p>
                 <label>Title:</label>
@@ -166,7 +191,6 @@ const HabitCard = ({ habit}) => {
                     onChange={(e) => setTitleInput(e.target.value)}
                     value={titleInput}
                 />
-
                 <label>Description:</label>
                 <input
                     type="text"
@@ -175,8 +199,8 @@ const HabitCard = ({ habit}) => {
                 />
                 <button onClick={handleUpdate}>confirm</button>
                 {error && <div className="error">{error}</div>}
-        </Popup>
-    </div>
+            </Popup>
+        </div>
 
         //<div className = "habit-card">
         //    <div className = "habit-info">
