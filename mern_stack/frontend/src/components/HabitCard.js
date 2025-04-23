@@ -49,6 +49,12 @@ const HabitCard = ({ habit}) => {
         fetchHabitData();
     }, [habit._id]);
 
+    useEffect(() => {
+        if (habit && habit._id) {
+            setHabitData(habit);
+        }
+    }, [habit]);
+    
     
     const handleDelete = async () => { 
         if (!user) {
@@ -69,20 +75,33 @@ const HabitCard = ({ habit}) => {
     }
 
     const handleCompleted = async () => {
-        setIsCompleted(prev => !prev);
-        const response = await fetch(`/api/habits/${habit._id}/complete`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${user.token}`
+        setIsCompleted((prev) => !prev);
+    
+        try {
+            const response = await fetch(`/api/habits/${habit._id}/complete`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user.token}`,
+                },
+            });
+    
+            const updatedHabit = await response.json();
+    
+            if (response.ok) {
+                setHabitData(updatedHabit);
+    
+                // Dispatch an action to update the global context state
+                dispatch({
+                    type: 'TOGGLE_COMPLETE',
+                    payload: updatedHabit, // Pass the updated habit to the reducer
+                });
             }
-        });
-
-        const updatedHabit = await response.json();
-        if (response.ok) {
-            setHabitData(updatedHabit);
+        } catch (error) {
+            console.error('Error completing habit:', error);
         }
-    }
+    };
+    
 
     // Get last completed date
     const getLastCompletedDate = () => {
