@@ -1,0 +1,145 @@
+.habit-calendar {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #666;
+}
+
+.calendar-header button:hover {
+    color: #333;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    width: 100%;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #333;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+    position: relative;
+    min-height: 40px;
+}
+
+.calendar-day:hover {
+    background: #e0e0e0;
+}
+
+.calendar-day.empty {
+    background: none;
+    cursor: default;
+}
+
+.calendar-day.completed {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.calendar-day.completed:hover {
+    background: #c8e6c9;
+}
+
+.completion-dot {
+    position: absolute;
+    bottom: 2px;
+    width: 4px;
+    height: 4px;
+    background: #4caf50;
+    border-radius: 50%;
+}
+
+/* Custom tooltip styles */
+.calendar-day[data-tooltip] {
+    position: relative;
+}
+
+.calendar-day[data-tooltip]::after {
+    content: attr(data-tooltip-content);
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: pre-line;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    min-width: 150px;
+    line-height: 1.4;
+}
+
+.calendar-day[data-tooltip]::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.calendar-day[data-tooltip]:hover::after,
+.calendar-day[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+} 

@@ -1,20 +1,29 @@
 .home {
   display: flex;
-  flex-direction: column;
-  align-items: column;
+  padding: 2rem;
+  gap: 0;
+  position: relative;
 }
 
 .habits {
-  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: column;
+  max-width: 500px;  /* Limit width of habits section */
 }
 
 .add-habit {
   margin-top: 20px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.calendar-container {
+  width: 600px;  /* Increased from 500px to make calendar even bigger */
+  flex-shrink: 0;
+  position: absolute;
+  left: 580px;
+  top: 2rem;
 }

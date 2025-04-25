@@ -5,6 +5,7 @@ import '../styles/HabitCard.css'
 import Popup from './Popup'
 import { useHabitsContext } from '../hooks/useHabitsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import HabitCalendar from './HabitCalendar'
 
 const HabitCard = ({ habit}) => { 
     const { dispatch } = useHabitsContext()
@@ -287,6 +288,7 @@ const HabitCard = ({ habit}) => {
                     <a onClick={handleDelete} href="#" className="delete-option">Delete</a>
                 </div>
             </div>
+            <HabitCalendar habit={habitData} />
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <h3>Updating Habit</h3>
                 <p>Change the title and/or description, but neither must be empty</p>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import '../styles/Home.css'
 import { useHabitsContext } from '../hooks/useHabitsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
@@ -6,6 +6,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 // components
 import HabitCard from '../components/HabitCard'
 import HabitForm from '../components/HabitForm'
+import HabitCalendar from '../components/HabitCalendar'
 
 const Home = () => {
     const {habits, dispatch} = useHabitsContext()
@@ -34,12 +35,15 @@ const Home = () => {
 
     return (
         <div className="home">
-            <div class="habits">
+            <div className="habits">
                 {habits && habits.map((habit) => (
                     <HabitCard key={habit._id} habit={habit} />
                 ))}
+                <HabitForm/>
             </div>
-            <HabitForm/>
+            <div className="calendar-container">
+                <HabitCalendar habits={habits} />
+            </div>
         </div>
     )
 }
