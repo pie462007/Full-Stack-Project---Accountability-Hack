@@ -55,6 +55,92 @@ const HabitCard = ({ habit}) => {
         }
     }, [habit]);
     
+    // Add timer to check date at midnight
+    useEffect(() => {
+        let isUpdating = false; // Flag to prevent concurrent updates
+
+        const checkDate = async () => {
+            if (isUpdating) return; // Skip if already updating
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            // Check based on habit frequency
+            let isCompletedToday = false;
+            
+            if (habit.frequency === 'daily') {
+                isCompletedToday = habitData.completions.some(completion => {
+                    const completionDate = new Date(completion);
+                    completionDate.setHours(0, 0, 0, 0);
+                    return completionDate.getTime() === today.getTime();
+                });
+            } else if (habit.frequency === 'weekly') {
+                const getWeekBoundary = (date) => {
+                    const d = new Date(date);
+                    d.setUTCHours(0, 0, 0, 0);
+                    const dayOfWeek = d.getUTCDay();
+                    if (dayOfWeek === 0) {
+                        return d.getTime();
+                    } else {
+                        d.setUTCDate(d.getUTCDate() - dayOfWeek);
+                        return d.getTime();
+                    }
+                };
+                
+                const todayBoundary = getWeekBoundary(today);
+                isCompletedToday = habitData.completions.some(completion => {
+                    const completionDate = new Date(completion);
+                    return getWeekBoundary(completionDate) === todayBoundary;
+                });
+            } else if (habit.frequency === 'monthly') {
+                isCompletedToday = habitData.completions.some(completion => {
+                    const completionDate = new Date(completion);
+                    return completionDate.getFullYear() === today.getFullYear() && 
+                           completionDate.getMonth() === today.getMonth();
+                });
+            }
+            
+            // Only update if the completion status has changed
+            if (isCompletedToday !== isCompleted) {
+                try {
+                    isUpdating = true;
+                    const response = await fetch(`/api/habits/${habit._id}`, {
+                        headers: {
+                            'Authorization': `Bearer ${user.token}`
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const updatedHabit = await response.json();
+                        setHabitData(updatedHabit);
+                        setIsCompleted(isCompletedToday);
+                        
+                        // Dispatch the update to the context
+                        dispatch({
+                            type: 'TOGGLE_COMPLETE',
+                            payload: updatedHabit
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error updating habit status:', error);
+                } finally {
+                    isUpdating = false;
+                }
+            }
+        };
+
+        // Check immediately
+        checkDate();
+
+        // Set up interval to check every minute
+        const interval = setInterval(checkDate, 60000);
+
+        // Cleanup interval on component unmount
+        return () => {
+            clearInterval(interval);
+            isUpdating = false;
+        };
+    }, [habitData.completions, habit.frequency, dispatch, user.token, habit._id]);
     
     const handleDelete = async () => { 
         if (!user) {

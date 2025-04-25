@@ -9,6 +9,7 @@
   position: relative;
   max-width: 500px;
   border: 2px solid black;
+  transition: all 0.3s ease;
 }
 
 .habit-info h3 {
@@ -130,11 +131,16 @@
 .completed {
     background-color: #e8f5e9;
     border-color: #4caf50;
+    transition: all 0.3s ease;
 }
 
 .completed .last-completed {
     color: #4caf50;
     font-weight: 500;
+}
+
+.completed h3 {
+  color: #2e7d32;
 }
 /* .habit-details {
     background: #fff;
