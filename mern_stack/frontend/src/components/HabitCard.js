@@ -17,7 +17,8 @@ const HabitCard = ({ habit}) => {
     const [habitData, setHabitData] = useState({
         title: habit.title,
         description: habit.description,
-        completions: habit.completions || []
+        completions: habit.completions || [],
+        frequency: habit.frequency || 'daily'
     })
     const {user} = useAuthContext()
 
@@ -181,11 +182,12 @@ const HabitCard = ({ habit}) => {
                 // Dispatch an action to update the global context state
                 dispatch({
                     type: 'TOGGLE_COMPLETE',
-                    payload: updatedHabit, // Pass the updated habit to the reducer
+                    payload: updatedHabit
                 });
             }
         } catch (error) {
             console.error('Error completing habit:', error);
+            setIsCompleted((prev) => !prev); // Revert the state if there's an error
         }
     };
     
@@ -218,6 +220,12 @@ const HabitCard = ({ habit}) => {
     const handleUpdate = async (e) => {
         e.preventDefault()
 
+        // Validate inputs
+        if (!titleInput.trim() || !descriptionInput.trim()) {
+            setError('Title and description cannot be empty');
+            return;
+        }
+
         const response = await fetch(`/api/habits/${habit._id}`, {
             method: 'PATCH',
             body: JSON.stringify({
@@ -237,7 +245,15 @@ const HabitCard = ({ habit}) => {
             updateDefaultValues(habitData.title, habitData.description)
         }
         else{  
-            //dispatch({type: 'EDIT_HABIT', payload: json})
+            const updatedHabit = {
+                ...json,
+                completions: json.completions || []
+            };
+            setHabitData(updatedHabit);
+            dispatch({
+                type: 'UPDATE_HABIT',
+                payload: updatedHabit
+            });
             setButtonPopup(false)
             updateDefaultValues(titleInput, descriptionInput)
         }
@@ -246,23 +262,48 @@ const HabitCard = ({ habit}) => {
     const updateDefaultValues = async (defaultTitle, defaultDescription) => {
         setTitleInput(defaultTitle)
         setDescriptionInput(defaultDescription)
-        setHabitData({
+        setHabitData(prevData => ({
+            ...prevData,
             title: defaultTitle,
-            description: defaultDescription
-        })
+            description: defaultDescription,
+            completions: prevData.completions || []
+        }))
     }
 
     const enableUpdate = async () => {
-        const response = await fetch(`/api/habits/${habit._id}`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${user.token}`
-            }
-        })
+        try {
+            const response = await fetch(`/api/habits/${habit._id}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${user.token}`
+                }
+            });
 
-        if (response.ok){
-            updateDefaultValues(habitData.title, habitData.description)
-            setButtonPopup(true);
+            if (response.ok) {
+                const updatedHabit = await response.json();
+                // Ensure completions array is initialized
+                const habitWithCompletions = {
+                    ...updatedHabit,
+                    completions: updatedHabit.completions || [],
+                    frequency: updatedHabit.frequency || 'daily',
+                    currentStreak: updatedHabit.currentStreak || 0
+                };
+                setTitleInput(updatedHabit.title);
+                setDescriptionInput(updatedHabit.description);
+                setHabitData(habitWithCompletions);
+                // Dispatch the update to the global state
+                dispatch({
+                    type: 'UPDATE_HABIT',
+                    payload: habitWithCompletions
+                });
+                setButtonPopup(true);
+            }
+        } catch (error) {
+            console.error('Error fetching habit data:', error);
+            dispatch({
+                type: 'UPDATE_HABIT',
+                payload: habitData
+            });
         }
     }
 

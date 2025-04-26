@@ -29,7 +29,14 @@ export const HabitsReducer = (state, action) => {
                         : h
                     ),
                 };
-            
+        case 'UPDATE_HABIT':
+            return {
+                habits: state.habits.map((h) =>
+                    h._id === action.payload._id
+                        ? { ...h, ...action.payload }
+                        : h
+                )
+            };
         default:
             return state
     }

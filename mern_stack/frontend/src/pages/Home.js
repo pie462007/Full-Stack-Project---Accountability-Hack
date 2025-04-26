@@ -28,10 +28,7 @@ const Home = () => {
         if (user) {
             fetchHabits()
         }
-        else {
-            console.error("error fetching habits");
-        }
-    }, [user])
+    }, [user, dispatch])
 
     return (
         <div className="home">
