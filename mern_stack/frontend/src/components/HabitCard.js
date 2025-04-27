@@ -38,7 +38,7 @@ const HabitCard = ({ habit}) => {
                 // Check if habit is completed today
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
-                setIsCompleted(data.completions.some(completion => {
+                setIsCompleted((data.completions || []).some(completion => {
                     const completionDate = new Date(completion);
                     completionDate.setHours(0, 0, 0, 0);
                     return completionDate.getTime() === today.getTime();
@@ -71,7 +71,7 @@ const HabitCard = ({ habit}) => {
             let isCompletedToday = false;
             
             if (habit.frequency === 'daily') {
-                isCompletedToday = habitData.completions.some(completion => {
+                isCompletedToday = (habitData.completions || []).some(completion => {
                     const completionDate = new Date(completion);
                     completionDate.setHours(0, 0, 0, 0);
                     return completionDate.getTime() === today.getTime();
@@ -90,12 +90,12 @@ const HabitCard = ({ habit}) => {
                 };
                 
                 const todayBoundary = getWeekBoundary(today);
-                isCompletedToday = habitData.completions.some(completion => {
+                isCompletedToday = (habitData.completions || []).some(completion => {
                     const completionDate = new Date(completion);
                     return getWeekBoundary(completionDate) === todayBoundary;
                 });
             } else if (habit.frequency === 'monthly') {
-                isCompletedToday = habitData.completions.some(completion => {
+                isCompletedToday = (habitData.completions || []).some(completion => {
                     const completionDate = new Date(completion);
                     return completionDate.getFullYear() === today.getFullYear() && 
                            completionDate.getMonth() === today.getMonth();

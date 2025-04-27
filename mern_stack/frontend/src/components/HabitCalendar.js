@@ -35,7 +35,7 @@ const HabitCalendar = ({ habits }) => {
         for (let day = 1; day <= totalDays; day++) {
             const date = new Date(year, month, day);
             const completions = habits.filter(habit => 
-                habit.completions.some(completion => {
+                (habit.completions || []).some(completion => {
                     const completionDate = new Date(completion);
                     return completionDate.getDate() === day &&
                            completionDate.getMonth() === month &&
