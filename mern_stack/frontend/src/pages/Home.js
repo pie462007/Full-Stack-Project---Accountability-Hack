@@ -7,6 +7,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import HabitCard from '../components/HabitCard'
 import HabitForm from '../components/HabitForm'
 import HabitCalendar from '../components/HabitCalendar'
+import FriendsList from "../components/FriendsList";
 
 const Home = () => {
     const {habits, dispatch} = useHabitsContext()
@@ -41,6 +42,9 @@ const Home = () => {
             <div className="calendar-container">
                 <HabitCalendar habits={habits} />
             </div>
+            <div className="friends-container">
+                <FriendsList/>
+            </div>            
         </div>
     )
 }

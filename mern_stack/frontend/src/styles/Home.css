@@ -27,3 +27,11 @@
   left: 580px;
   top: 2rem;
 }
+
+.friends-container {
+  width: 200px;  
+  flex: 1;
+  position: absolute;
+  left: 1310px;
+  top: 2rem;
+}

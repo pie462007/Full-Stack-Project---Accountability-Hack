@@ -126,13 +126,35 @@ const getUser = async (req, res) => {
   }
 };
 
+const getFriends = async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    // Find the user and populate the accepted friends
+    const user = await User.findById(userId).populate(
+      "friendship.accepted",
+      "username email"
+    );
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json(user.friendship.accepted);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch friends" });
+  }
+};
+
 module.exports = {
   signupUser,
   loginUser,
   sendFriendRequest,
   addFriend,
   searchUsers,
-  getUser
+  getUser,
+  getFriends
 };
 
 

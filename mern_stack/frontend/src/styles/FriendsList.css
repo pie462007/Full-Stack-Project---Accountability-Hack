@@ -1,0 +1,20 @@
+.friends-list {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .friends-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .friends-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
