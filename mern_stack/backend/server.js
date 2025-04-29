@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('./utils/scheduler');
 
 const express = require('express')
 const mongoose = require('mongoose')
