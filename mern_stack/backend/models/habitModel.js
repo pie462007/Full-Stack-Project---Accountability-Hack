@@ -29,7 +29,25 @@ const habitSchema = new Schema({
     user_id: {
         type: String,
         required: true
-    }
+    },
+    isPrivate: {
+        type: Boolean,
+        default: false
+    },
+    synced: {
+        type: [
+          {
+            habitId: { type: mongoose.Schema.Types.ObjectId, ref: 'Habit', required: true },
+            userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+          }
+        ],
+        validate: {
+          validator: function (val) {
+            return val.length <= 5;
+          },
+          message: 'You can sync with up to 5 habits/users.'
+        }
+      }
 
 }, { timestamps: true })
 
