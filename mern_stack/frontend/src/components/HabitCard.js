@@ -244,10 +244,12 @@ const HabitCard = ({ habit}) => {
             setError(json.error)
             updateDefaultValues(habitData.title, habitData.description)
         }
-        else{  
+        else {  
             const updatedHabit = {
+                ...habit,
                 ...json,
-                completions: json.completions || []
+                title: titleInput,
+                description: descriptionInput
             };
             setHabitData(updatedHabit);
             dispatch({
