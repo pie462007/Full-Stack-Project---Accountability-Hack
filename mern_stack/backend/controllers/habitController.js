@@ -77,13 +77,32 @@ const getHabit = async (req, res) => {
 
 
 const createHabit = async (req, res) => {
-    const {title, description} = req.body
+    const {title, description, frequency} = req.body
 
     try {
-		const user_id = req.user._id
-        const habit = await Habit.create({title, description, user_id})
+        const user_id = req.user._id
+        console.log('Creating habit:', {
+            title,
+            description,
+            frequency,
+            user_id: user_id.toString()
+        });
+
+        // Validate frequency
+        if (!frequency || !['daily', 'weekly', 'monthly'].includes(frequency.toLowerCase())) {
+            throw new Error('Invalid frequency. Must be daily, weekly, or monthly');
+        }
+
+        const habit = await Habit.create({
+            title, 
+            description, 
+            frequency: frequency.toLowerCase(),
+            user_id
+        })
+        console.log('Created habit:', habit);
         res.status(200).json(habit)
     } catch (error) {
+        console.error('Error creating habit:', error);
         res.status(404).json({error: error.message})
     }
 }
@@ -164,6 +183,53 @@ const completeHabit = async (req, res) => {
     res.status(200).json(habit); 
 };
 
+const getAllHabitsForLeaderboard = async (req, res) => {
+    try {
+        const { frequency } = req.query;
+        console.log('Requested frequency:', frequency);
+
+        // First get all habits
+        const habits = await Habit.find();
+        console.log('Total habits found:', habits.length);
+
+        // Get all users
+        const User = require('../models/userModel');
+        const users = await User.find({}, 'email _id');
+        const userMap = new Map(users.map(user => [user._id.toString(), user.email]));
+
+        // Add user email to each habit
+        const habitsWithUser = habits.map(habit => ({
+            ...habit.toObject(),
+            user_id: {
+                email: userMap.get(habit.user_id)
+            }
+        }));
+
+        // Filter by frequency
+        const filteredHabits = habitsWithUser.filter(habit => 
+            habit.frequency && habit.frequency.toLowerCase() === frequency.toLowerCase()
+        );
+
+        console.log('Filtered habits count:', filteredHabits.length);
+
+        // Sort by streak and limit to top 10
+        const sortedHabits = filteredHabits
+            .sort((a, b) => (b.currentStreak || 0) - (a.currentStreak || 0))
+            .slice(0, 10);
+
+        console.log('Sending habits:', sortedHabits.map(h => ({
+            title: h.title,
+            email: h.user_id?.email,
+            streak: h.currentStreak
+        })));
+
+        res.status(200).json(sortedHabits);
+    } catch (error) {
+        console.error('Leaderboard error:', error);
+        res.status(400).json({ error: error.message });
+    }
+};
+
 module.exports = {
     getHabits,
     getHabit,
@@ -171,5 +237,6 @@ module.exports = {
     deleteHabit,
     updateHabit,
     completeHabit,
-    syncHabit
+    syncHabit,
+    getAllHabitsForLeaderboard
 }

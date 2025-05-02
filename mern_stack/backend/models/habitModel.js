@@ -48,7 +48,6 @@ const habitSchema = new Schema({
           message: 'You can sync with up to 5 habits/users.'
         }
       }
-
 }, { timestamps: true })
 
 module.exports = mongoose.model('Habit', habitSchema)

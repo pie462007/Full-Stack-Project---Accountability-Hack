@@ -1,91 +1,100 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import UserBoardProfile from '../components/UserBoardProfile'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-const Leaderboard = ({allHabits, allUsers}) => {
+const Leaderboard = () => {
     const [habitData, setHabitData] = useState([])
     const [type, setType] = useState('daily')
-    //const { user } = useAuthContext()
+    const { user } = useAuthContext()
 
-    /*useEffect(() => {
-        const getAllHabits = async () => {
-            const habits = await fetch(`/api/habits/`)
-    
-            const json = await habits.json()
-            if(json.ok){
-                for(let i = 0; i < json.length; i++){
-                    const element = json[i]
-                    if(element.frequency===type){
-                        const user = await fetch(`/api/user/${element.user_id}`)
-                        const response = await user.json()
-                        if(response.ok){
-                            if(habitData.some(el => el.email === response.email)){
-                                let updatedData = habitData.map(el => {
-                                    if(el.email === element.email && el.longestCurrent < element.currentStreak){
-                                        return {...el, longestCurrent: element.currentStreak}
-                                    }
-                                    return el;
-                                });
-                                setHabitData(updatedData)
-                            }
-                            else{
-                                setHabitData([...habitData, {
-                                    email: response.email,
-                                    longestCurrent: element.currentStreak
-                                }])
-                            }
-                        }
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                console.log('Fetching data for frequency:', type);
+                const url = `/api/habits/leaderboard?frequency=${type}`;
+                
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`
                     }
+                })
+                const data = await response.json()
+                
+                if (response.ok) {
+                    console.log('Received habit data:', data.map(h => ({
+                        title: h.title,
+                        email: h.user_id?.email,
+                        streak: h.currentStreak
+                    })));
+                    
+                    // Sort by currentStreak in descending order and take top 10
+                    const sortedData = data
+                        .sort((a, b) => (b.currentStreak || 0) - (a.currentStreak || 0))
+                        .slice(0, 10);
+                    setHabitData(sortedData);
+                } else {
+                    console.error('Error fetching leaderboard data:', data.error)
                 }
-                habitData.sort((a,b) => a.longestCurrent - b.longestCurrent)
+            } catch (error) {
+                console.error('Error fetching leaderboard data:', error)
             }
         }
-        getAllHabits()
-    });*/
+
+        if (user) {
+            fetchData()
+        }
+    }, [user, type])
 
     const handleClick = (e) => {
-        setType(e.target.dataset.id)
-        setHabitData([])
-        getAllHabits()
+        const newType = e.target.dataset.id;
+        console.log('Changing frequency to:', newType);
+        setType(newType)
     }
 
-    const getAllHabits = async () => {
-        const freqHabits = allHabits.filter(el => el.frequency === type)
-        for(let i = 0; i < freqHabits.length; i++){
-            const element = json[i]
-            const user = allUsers.find(u => u.id === element.user_id)
-            if(habitData.some(el => el.email === user.email)){
-                let updatedData = habitData.map(el => {
-                    if(el.email === element.email && el.longestCurrent < element.currentStreak){
-                        return {...el, longestCurrent: element.currentStreak}
-                    }
-                    return el;
-                 });
-                setHabitData(updatedData)
-             }
-            else{
-                setHabitData([...habitData, {
-                    email: user.email,
-                    longestCurrent: element.currentStreak
-                }])
-            }
+    const getFrequencyTitle = (type) => {
+        switch(type) {
+            case 'daily':
+                return 'Daily Habits';
+            case 'weekly':
+                return 'Weekly Habits';
+            case 'monthly':
+                return 'Monthly Habits';
+            default:
+                return 'Habits';
         }
-        habitData.sort((a,b) => a.longestCurrent - b.longestCurrent)
     }
 
-    return(
+    return (
         <div className="board">
-            <h1 className="leaderboard">Leaderboard</h1>
+            <h1 className="leaderboard">Top 10 {getFrequencyTitle(type)} Leaderboard</h1>
 
             <div className="habitFrequency">
-                <button onClick={handleClick} frequency='daily'>Daily</button>
-                <button onClick={handleClick} frequency='weekly'>Weekly</button>
-                <button onClick={handleClick} frequency='monthly'>Monthly</button>
+                <button 
+                    onClick={handleClick} 
+                    data-id="daily"
+                    className={type === 'daily' ? 'active' : ''}
+                >
+                    Daily
+                </button>
+                <button 
+                    onClick={handleClick} 
+                    data-id="weekly"
+                    className={type === 'weekly' ? 'active' : ''}
+                >
+                    Weekly
+                </button>
+                <button 
+                    onClick={handleClick} 
+                    data-id="monthly"
+                    className={type === 'monthly' ? 'active' : ''}
+                >
+                    Monthly
+                </button>
             </div>
 
-            <UserBoardProfile userHabitData={habitData}></UserBoardProfile>
+            <UserBoardProfile userHabitData={habitData} frequency={type} />
         </div>
     )
 }
 
-export default Leaderboard;
+export default Leaderboard
