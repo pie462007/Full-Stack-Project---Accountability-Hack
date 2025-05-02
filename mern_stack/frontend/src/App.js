@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Friends from './pages/Friends';
+import Leaderboard from './pages/Leaderboard';
+
 
 function App() {
   const {user} = useAuthContext()
@@ -33,7 +35,11 @@ function App() {
                 path="/Friends"
                 element={<Friends />}
               />
-            </Routes>
+            <Route
+             path="/Leaderboard"
+             element={<Leaderboard/>}
+             />
+             </Routes>
           </div>
         </BrowserRouter>
 

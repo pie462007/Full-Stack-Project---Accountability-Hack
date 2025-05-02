@@ -24,6 +24,9 @@ const Navbar = () => {
           <Link to="/friends">
             <h3>friends</h3>
           </Link>
+          <Link to="/leaderboard">
+            <h3>leaderboard</h3>
+          </Link>
 
           {!user && (
             <>
