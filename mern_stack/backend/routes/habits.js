@@ -7,7 +7,8 @@ const {
     updateHabit,
     completeHabit,
     syncHabit,
-    getAllHabitsForLeaderboard
+    getAllHabitsForLeaderboard,
+    getFriendHabits
 } = require('../controllers/habitController')
 const requireAuth = require('../middleware/requireAuth')
 
@@ -18,7 +19,7 @@ router.use(requireAuth)
 // Get all habits and leaderboard route must come before /:id routes
 router.get('/', getHabits)
 router.get('/leaderboard', getAllHabitsForLeaderboard)
-
+router.get('/friends/:friendId', getFriendHabits)
 // Routes with :id parameter
 router.get('/:id', getHabit)
 router.post('/', createHabit)

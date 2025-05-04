@@ -52,6 +52,18 @@ const syncHabit = async (req, res) => {
 	}
 }
 
+const getFriendHabits = async (req, res) => {
+    const friendId = req.params.friendId;
+  
+    try {
+        const habits = await Habit.find( {user_id: friendId, isPrivate: false}).sort({createdAt: -1});
+        res.status(200).json(habits);
+    } 
+    catch (error) {
+        res.status(400).json({ error: error.message})
+    }
+};
+
 const getHabits = async (req, res) => {
 	const user_id = req.user._id
     const habits = await Habit.find({user_id}).sort({createAt: -1})
@@ -238,5 +250,6 @@ module.exports = {
     updateHabit,
     completeHabit,
     syncHabit,
-    getAllHabitsForLeaderboard
+    getAllHabitsForLeaderboard,
+    getFriendHabits
 }

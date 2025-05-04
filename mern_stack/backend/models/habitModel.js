@@ -32,7 +32,7 @@ const habitSchema = new Schema({
     },
     isPrivate: {
         type: Boolean,
-        default: false
+        default: true
     },
     synced: {
         type: [
