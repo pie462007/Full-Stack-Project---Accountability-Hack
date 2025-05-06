@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\AuthContext.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\AuthContext.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\AuthContext.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\AuthContext.js",
     "statementMap": {
       "0": {
         "start": {
@@ -334,10 +334,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "82b9dd0238fb86e15f949f47c2e5d35774e7e92d"
+    "hash": "899eeefe8ee87378fda791d294e7ce872854a453"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useAuthContext.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useAuthContext.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useAuthContext.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useAuthContext.js",
     "statementMap": {
       "0": {
         "start": {
@@ -456,25 +456,25 @@
     },
     "s": {
       "0": 12,
-      "1": 1792,
-      "2": 1792,
+      "1": 1762,
+      "2": 1762,
       "3": 0,
-      "4": 1792
+      "4": 1762
     },
     "f": {
-      "0": 1792
+      "0": 1762
     },
     "b": {
       "0": [
         0,
-        1792
+        1762
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2393aeab2f1b73575a8725e4016b6d618854fd2e"
+    "hash": "0de60e94e93c77003b90d465b9df5690b51cdf4a"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\HabitContext.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\HabitContext.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\HabitContext.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\context\\HabitContext.js",
     "statementMap": {
       "0": {
         "start": {
@@ -902,38 +902,38 @@
     "s": {
       "0": 12,
       "1": 12,
-      "2": 64,
-      "3": 36,
+      "2": 58,
+      "3": 28,
       "4": 10,
       "5": 10,
       "6": 10,
-      "7": 2,
-      "8": 2,
+      "7": 4,
+      "8": 4,
       "9": 6,
       "10": 6,
       "11": 0,
       "12": 12,
-      "13": 88,
-      "14": 88
+      "13": 82,
+      "14": 82
     },
     "f": {
-      "0": 64,
+      "0": 58,
       "1": 10,
-      "2": 2,
+      "2": 4,
       "3": 6,
-      "4": 88
+      "4": 82
     },
     "b": {
       "0": [
-        36,
+        28,
         10,
         10,
-        2,
+        4,
         6,
         0
       ],
       "1": [
-        2,
+        4,
         0
       ],
       "2": [
@@ -942,10 +942,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fa3f38433231f5a5f2814f06a5ef19ee6afdf775"
+    "hash": "f13bbbbcdc9035923b124f6a72c71f626f87812b"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useHabitsContext.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useHabitsContext.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useHabitsContext.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useHabitsContext.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1064,25 +1064,25 @@
     },
     "s": {
       "0": 12,
-      "1": 738,
-      "2": 738,
+      "1": 736,
+      "2": 736,
       "3": 0,
-      "4": 738
+      "4": 736
     },
     "f": {
-      "0": 738
+      "0": 736
     },
     "b": {
       "0": [
         0,
-        738
+        736
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fddabd5700b9a3f23d1840ac57119c683f85bf1f"
+    "hash": "7a71a17abe0cfd47064afb131f48d52bd92075b7"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Popup.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Popup.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Popup.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Popup.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1194,24 +1194,24 @@
       }
     },
     "s": {
-      "0": 138,
+      "0": 144,
       "1": 1
     },
     "f": {
-      "0": 138,
+      "0": 144,
       "1": 1
     },
     "b": {
       "0": [
         88,
-        50
+        56
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "bcdf6fe2cee69108872b2c6900bb926007220d11"
+    "hash": "87f012330be74646cee62d2ca2c40259489ac35b"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCalendar.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCalendar.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCalendar.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCalendar.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2380,12 +2380,12 @@
     },
     "s": {
       "0": 12,
-      "1": 266,
-      "2": 266,
-      "3": 266,
-      "4": 57,
+      "1": 268,
+      "2": 268,
+      "3": 268,
+      "4": 53,
       "5": 27,
-      "6": 266,
+      "6": 268,
       "7": 27,
       "8": 0,
       "9": 27,
@@ -2402,97 +2402,97 @@
       "20": 27,
       "21": 837,
       "22": 837,
-      "23": 279,
-      "24": 31,
-      "25": 31,
-      "26": 1,
+      "23": 310,
+      "24": 62,
+      "25": 62,
+      "26": 2,
       "27": 837,
       "28": 27,
-      "29": 266,
+      "29": 268,
       "30": 0,
       "31": 0,
       "32": 0,
-      "33": 266,
+      "33": 268,
       "34": 108,
-      "35": 266,
-      "36": 158,
+      "35": 268,
+      "36": 160,
       "37": 108,
       "38": 0,
       "39": 0,
-      "40": 3290,
-      "41": 4,
-      "42": 3290
+      "40": 3360,
+      "41": 8,
+      "42": 3360
     },
     "f": {
-      "0": 266,
-      "1": 57,
+      "0": 268,
+      "1": 53,
       "2": 27,
-      "3": 279,
-      "4": 31,
-      "5": 1,
+      "3": 310,
+      "4": 62,
+      "5": 2,
       "6": 0,
       "7": 108,
       "8": 0,
       "9": 0,
-      "10": 3290,
-      "11": 4
+      "10": 3360,
+      "11": 8
     },
     "b": {
       "0": [
         27,
-        30
+        26
       ],
       "1": [
         0,
         27
       ],
       "2": [
-        279,
+        310,
         0
       ],
       "3": [
-        31,
-        1,
-        1
+        62,
+        2,
+        2
       ],
       "4": [
-        158,
+        160,
         108
       ],
       "5": [
-        2914,
-        376
+        2976,
+        384
       ],
       "6": [
-        4,
-        2910
+        8,
+        2968
       ],
       "7": [
-        2914,
-        376
+        2976,
+        384
       ],
       "8": [
-        4,
-        3286
+        8,
+        3352
       ],
       "9": [
-        2914,
-        376
+        2976,
+        384
       ],
       "10": [
-        2914,
-        376
+        2976,
+        384
       ],
       "11": [
-        3290,
-        4
+        3360,
+        8
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fc5622cb9535b216d7ec438fc41dd71aaac98f27"
+    "hash": "4899be0f63ba5f1e250a73a759fcf64103be429c"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCard.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCard.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCard.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitCard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5817,15 +5817,15 @@
     },
     "s": {
       "0": 12,
-      "1": 138,
-      "2": 138,
-      "3": 138,
-      "4": 138,
-      "5": 138,
-      "6": 138,
-      "7": 138,
-      "8": 138,
-      "9": 138,
+      "1": 144,
+      "2": 144,
+      "3": 144,
+      "4": 144,
+      "5": 144,
+      "6": 144,
+      "7": 144,
+      "8": 144,
+      "9": 144,
       "10": 10,
       "11": 10,
       "12": 10,
@@ -5841,22 +5841,22 @@
       "22": 0,
       "23": 0,
       "24": 10,
-      "25": 138,
-      "26": 14,
-      "27": 14,
-      "28": 138,
-      "29": 23,
-      "30": 23,
-      "31": 23,
+      "25": 144,
+      "26": 15,
+      "27": 15,
+      "28": 144,
+      "29": 25,
+      "30": 25,
+      "31": 25,
       "32": 0,
-      "33": 23,
-      "34": 23,
-      "35": 23,
-      "36": 23,
-      "37": 23,
-      "38": 1,
-      "39": 1,
-      "40": 1,
+      "33": 25,
+      "34": 25,
+      "35": 25,
+      "36": 25,
+      "37": 25,
+      "38": 2,
+      "39": 2,
+      "40": 2,
       "41": 0,
       "42": 0,
       "43": 0,
@@ -5874,30 +5874,30 @@
       "55": 0,
       "56": 0,
       "57": 0,
-      "58": 23,
-      "59": 0,
-      "60": 0,
-      "61": 0,
-      "62": 0,
-      "63": 0,
-      "64": 0,
-      "65": 0,
-      "66": 0,
+      "58": 25,
+      "59": 1,
+      "60": 1,
+      "61": 1,
+      "62": 1,
+      "63": 1,
+      "64": 1,
+      "65": 1,
+      "66": 1,
       "67": 0,
-      "68": 0,
-      "69": 23,
-      "70": 23,
-      "71": 23,
-      "72": 23,
-      "73": 23,
-      "74": 138,
+      "68": 1,
+      "69": 25,
+      "70": 25,
+      "71": 25,
+      "72": 25,
+      "73": 25,
+      "74": 144,
       "75": 5,
       "76": 0,
       "77": 5,
       "78": 5,
       "79": 5,
       "80": 5,
-      "81": 138,
+      "81": 144,
       "82": 1,
       "83": 2,
       "84": 1,
@@ -5909,20 +5909,20 @@
       "90": 0,
       "91": 0,
       "92": 0,
-      "93": 138,
-      "94": 138,
-      "95": 134,
-      "96": 4,
-      "97": 4,
-      "98": 4,
-      "99": 4,
-      "100": 4,
+      "93": 144,
+      "94": 144,
+      "95": 136,
+      "96": 8,
+      "97": 8,
+      "98": 8,
+      "99": 8,
+      "100": 8,
       "101": 0,
-      "102": 4,
-      "103": 4,
+      "102": 8,
+      "103": 8,
       "104": 0,
       "105": 0,
-      "106": 138,
+      "106": 144,
       "107": 1,
       "108": 1,
       "109": 0,
@@ -5937,12 +5937,12 @@
       "118": 1,
       "119": 1,
       "120": 1,
-      "121": 138,
+      "121": 144,
       "122": 1,
       "123": 1,
       "124": 1,
       "125": 2,
-      "126": 138,
+      "126": 144,
       "127": 2,
       "128": 2,
       "129": 2,
@@ -5955,30 +5955,30 @@
       "136": 2,
       "137": 0,
       "138": 0,
-      "139": 138,
+      "139": 144,
       "140": 13,
       "141": 27
     },
     "f": {
-      "0": 138,
+      "0": 144,
       "1": 10,
       "2": 10,
       "3": 0,
-      "4": 14,
-      "5": 23,
-      "6": 23,
-      "7": 1,
+      "4": 15,
+      "5": 25,
+      "6": 25,
+      "7": 2,
       "8": 0,
       "9": 0,
       "10": 0,
-      "11": 23,
+      "11": 25,
       "12": 5,
       "13": 1,
       "14": 2,
       "15": 0,
-      "16": 138,
-      "17": 4,
-      "18": 4,
+      "16": 144,
+      "17": 8,
+      "18": 8,
       "19": 1,
       "20": 1,
       "21": 2,
@@ -5988,11 +5988,11 @@
     },
     "b": {
       "0": [
-        138,
+        144,
         0
       ],
       "1": [
-        138,
+        144,
         0
       ],
       "2": [
@@ -6004,23 +6004,23 @@
         0
       ],
       "4": [
-        14,
+        15,
         0
       ],
       "5": [
-        14,
-        14
+        15,
+        15
       ],
       "6": [
         0,
-        23
+        25
       ],
       "7": [
-        23,
+        25,
         0
       ],
       "8": [
-        23,
+        25,
         0
       ],
       "9": [
@@ -6048,11 +6048,11 @@
         0
       ],
       "15": [
-        0,
-        23
+        1,
+        24
       ],
       "16": [
-        0,
+        1,
         0
       ],
       "17": [
@@ -6068,20 +6068,20 @@
         0
       ],
       "20": [
-        134,
-        4
+        136,
+        8
       ],
       "21": [
-        138,
-        138
+        144,
+        144
       ],
       "22": [
-        4,
-        4
+        8,
+        8
       ],
       "23": [
         0,
-        4
+        8
       ],
       "24": [
         0,
@@ -6117,26 +6117,26 @@
       ],
       "32": [
         6,
-        132
+        138
       ],
       "33": [
         6,
-        132
+        138
       ],
       "34": [
         6,
-        132
+        138
       ],
       "35": [
-        138,
+        144,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f89caec22da1bd384f1b2c4e6045e16370574757"
+    "hash": "60fb1434b1b476c5969170c27c81de8834bf8351"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitForm.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitForm.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitForm.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\HabitForm.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6813,14 +6813,14 @@
     },
     "s": {
       "0": 12,
-      "1": 526,
-      "2": 526,
-      "3": 526,
-      "4": 526,
-      "5": 526,
-      "6": 526,
-      "7": 526,
-      "8": 526,
+      "1": 522,
+      "2": 522,
+      "3": 522,
+      "4": 522,
+      "5": 522,
+      "6": 522,
+      "7": 522,
+      "8": 522,
       "9": 6,
       "10": 6,
       "11": 0,
@@ -6838,7 +6838,7 @@
       "23": 5,
       "24": 5,
       "25": 5,
-      "26": 526,
+      "26": 522,
       "27": 6,
       "28": 0,
       "29": 57,
@@ -6846,7 +6846,7 @@
       "31": 0
     },
     "f": {
-      "0": 526,
+      "0": 522,
       "1": 6,
       "2": 6,
       "3": 0,
@@ -6868,19 +6868,19 @@
         1
       ],
       "3": [
-        526,
-        472
+        522,
+        476
       ],
       "4": [
-        472,
+        476,
         2
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2b0c87e7ad3967a5f60a68bc17d604e25a5fb354"
+    "hash": "41a8b5eea7cf354c0b43b80699331c1092555860"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\FriendsList.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\FriendsList.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\FriendsList.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\FriendsList.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7365,48 +7365,48 @@
     },
     "s": {
       "0": 12,
-      "1": 98,
-      "2": 98,
-      "3": 98,
-      "4": 98,
-      "5": 20,
-      "6": 20,
+      "1": 94,
+      "2": 94,
+      "3": 94,
+      "4": 94,
+      "5": 16,
+      "6": 16,
       "7": 0,
-      "8": 20,
-      "9": 20,
-      "10": 18,
+      "8": 16,
+      "9": 16,
+      "10": 14,
       "11": 0,
-      "12": 18,
-      "13": 18,
+      "12": 14,
+      "13": 14,
       "14": 0,
-      "15": 20,
-      "16": 98,
+      "15": 16,
+      "16": 94,
       "17": 0,
-      "18": 98,
+      "18": 94,
       "19": 0
     },
     "f": {
-      "0": 98,
-      "1": 20,
-      "2": 20,
+      "0": 94,
+      "1": 16,
+      "2": 16,
       "3": 0
     },
     "b": {
       "0": [
         0,
-        20
+        16
       ],
       "1": [
         0,
-        18
+        14
       ],
       "2": [
         0,
-        98
+        94
       ],
       "3": [
         0,
-        98
+        94
       ],
       "4": [
         0,
@@ -7414,10 +7414,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "942f3b717b5d6660a214c6a2b9a24b659fe073e1"
+    "hash": "9afd8e2e6f96a04cd8a4cd4d416f8c22379ae798"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Home.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Home.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Home.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Home.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7760,44 +7760,44 @@
     },
     "s": {
       "0": 12,
-      "1": 74,
-      "2": 74,
-      "3": 74,
-      "4": 20,
-      "5": 20,
-      "6": 18,
-      "7": 18,
-      "8": 18,
-      "9": 20,
-      "10": 20,
-      "11": 74,
-      "12": 18
+      "1": 70,
+      "2": 70,
+      "3": 70,
+      "4": 16,
+      "5": 16,
+      "6": 14,
+      "7": 14,
+      "8": 14,
+      "9": 16,
+      "10": 16,
+      "11": 70,
+      "12": 20
     },
     "f": {
-      "0": 74,
-      "1": 20,
-      "2": 20,
-      "3": 18
+      "0": 70,
+      "1": 16,
+      "2": 16,
+      "3": 20
     },
     "b": {
       "0": [
-        18,
+        14,
         0
       ],
       "1": [
-        20,
+        16,
         0
       ],
       "2": [
-        74,
+        70,
         54
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1751b59e220f6698002ec3bae10f292974fff2a9"
+    "hash": "469cddc2265d1a8d46079af1642d3fe99001dd02"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogout.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogout.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogout.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogout.js",
     "statementMap": {
       "0": {
         "start": {
@@ -7925,10 +7925,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "079bf717763ef4b826f3cbac75badb7833b1fa4e"
+    "hash": "a9a8917d886fedda831e8f3a36eb0f6c4b433a49"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Navbar.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Navbar.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Navbar.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\Navbar.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8138,10 +8138,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "22ad6984f90c8a76e3ca6b097759363f32715a93"
+    "hash": "d60a88cf355b6872459c35f257bf16e7eda197f0"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useSignup.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useSignup.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useSignup.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useSignup.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8472,10 +8472,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b757b09bf28f85f0a637eb7eb44886c0a3add638"
+    "hash": "4d1b1ec0eb2bbbe5b56244809a9090ab15ce97f0"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Signup.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Signup.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Signup.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Signup.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8750,10 +8750,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "23c5c0044e75c3c190ff103b7d18e6d1ee1f5213"
+    "hash": "d15560f8d8a6d6394461262108f95403adfb5a34"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogin.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogin.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogin.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\hooks\\useLogin.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9084,10 +9084,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "db9f2cd3b972c4f501a099f864bec6923136f33b"
+    "hash": "dba80ad5b2a97b3cf7d8ea125f6c99d3ff03dfaa"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Login.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Login.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Login.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Login.js",
     "statementMap": {
       "0": {
         "start": {
@@ -9351,10 +9351,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0130655c40afb6fa55313e2ec233e084f6e11b6c"
+    "hash": "1c3a3cfad1bad493aa2d5512322bc67ce00c3abb"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Friends.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Friends.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Friends.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Friends.js",
     "statementMap": {
       "0": {
         "start": {
@@ -10894,37 +10894,37 @@
       }
     },
     "s": {
-      "0": 72,
-      "1": 72,
-      "2": 72,
-      "3": 72,
-      "4": 72,
-      "5": 72,
-      "6": 2,
-      "7": 0,
-      "8": 2,
-      "9": 2,
-      "10": 2,
+      "0": 46,
+      "1": 46,
+      "2": 46,
+      "3": 46,
+      "4": 46,
+      "5": 46,
+      "6": 3,
+      "7": 2,
+      "8": 1,
+      "9": 1,
+      "10": 1,
       "11": 0,
-      "12": 2,
-      "13": 2,
+      "12": 1,
+      "13": 1,
       "14": 0,
-      "15": 72,
-      "16": 2,
-      "17": 72,
-      "18": 18,
-      "19": 2,
-      "20": 2,
+      "15": 46,
+      "16": 3,
+      "17": 46,
+      "18": 19,
+      "19": 3,
+      "20": 3,
       "21": 16,
       "22": 16,
       "23": 16,
-      "24": 16,
+      "24": 9,
       "25": 0,
-      "26": 16,
-      "27": 16,
+      "26": 9,
+      "27": 5,
       "28": 0,
       "29": 16,
-      "30": 72,
+      "30": 46,
       "31": 0,
       "32": 0,
       "33": 0,
@@ -10933,7 +10933,7 @@
       "36": 0,
       "37": 0,
       "38": 0,
-      "39": 72,
+      "39": 46,
       "40": 0,
       "41": 0,
       "42": 0,
@@ -10943,56 +10943,56 @@
       "46": 0,
       "47": 0,
       "48": 0,
-      "49": 72,
+      "49": 46,
       "50": 16,
-      "51": 60,
+      "51": 32,
       "52": 0,
       "53": 0,
       "54": 0
     },
     "f": {
-      "0": 72,
-      "1": 2,
-      "2": 2,
-      "3": 18,
+      "0": 46,
+      "1": 3,
+      "2": 3,
+      "3": 19,
       "4": 16,
       "5": 0,
       "6": 0,
       "7": 16,
-      "8": 60,
+      "8": 32,
       "9": 0,
       "10": 0,
       "11": 0
     },
     "b": {
       "0": [
-        0,
-        2
+        2,
+        1
       ],
       "1": [
-        2,
-        2
+        3,
+        1
       ],
       "2": [
         0,
-        2
+        1
       ],
       "3": [
-        2,
+        1,
         0
       ],
       "4": [
-        2,
+        3,
         16
       ],
       "5": [
-        18,
-        18,
-        18
+        19,
+        17,
+        17
       ],
       "6": [
         0,
-        16
+        9
       ],
       "7": [
         0,
@@ -11019,24 +11019,24 @@
         0
       ],
       "13": [
-        60,
-        12
+        32,
+        14
       ],
       "14": [
-        60,
-        60
+        32,
+        32
       ],
       "15": [
-        12,
-        4
+        14,
+        6
       ],
       "16": [
-        72,
+        46,
         0
       ],
       "17": [
         0,
-        72
+        46
       ],
       "18": [
         0,
@@ -11044,10 +11044,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "736de0e422d99feddf8fbc7c5173fae4f61f1784"
+    "hash": "a5d7fc0a8f65d8ccd5ccc3cac2a6a4ecea8806a9"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\UserBoardProfile.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\UserBoardProfile.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\UserBoardProfile.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\components\\UserBoardProfile.js",
     "statementMap": {
       "0": {
         "start": {
@@ -11428,18 +11428,18 @@
     },
     "s": {
       "0": 12,
-      "1": 4,
+      "1": 6,
       "2": 20,
       "3": 20,
       "4": 0,
       "5": 0,
       "6": 0,
-      "7": 4,
+      "7": 6,
       "8": 20,
       "9": 20
     },
     "f": {
-      "0": 4,
+      "0": 6,
       "1": 20,
       "2": 20
     },
@@ -11452,11 +11452,11 @@
       ],
       "1": [
         2,
-        2
+        4
       ],
       "2": [
-        4,
-        4
+        6,
+        6
       ],
       "3": [
         20,
@@ -11468,10 +11468,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "f8091604a6145dce9d78db18184f913c4d13e150"
+    "hash": "317156a843d401e59fc37d77af9242fedc818677"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Leaderboard.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Leaderboard.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Leaderboard.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\pages\\Leaderboard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12276,15 +12276,15 @@
     },
     "s": {
       "0": 12,
-      "1": 4,
-      "2": 4,
-      "3": 4,
-      "4": 4,
-      "5": 2,
-      "6": 2,
-      "7": 2,
-      "8": 2,
-      "9": 2,
+      "1": 6,
+      "2": 6,
+      "3": 6,
+      "4": 6,
+      "5": 3,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
       "10": 1,
       "11": 1,
       "12": 1,
@@ -12294,28 +12294,28 @@
       "16": 1,
       "17": 0,
       "18": 0,
-      "19": 2,
-      "20": 2,
-      "21": 4,
+      "19": 3,
+      "20": 1,
+      "21": 6,
       "22": 0,
       "23": 0,
       "24": 0,
-      "25": 4,
-      "26": 4,
-      "27": 4,
+      "25": 6,
+      "26": 6,
+      "27": 6,
       "28": 0,
       "29": 0,
       "30": 0,
-      "31": 4
+      "31": 6
     },
     "f": {
-      "0": 4,
-      "1": 2,
-      "2": 2,
+      "0": 6,
+      "1": 3,
+      "2": 1,
       "3": 10,
       "4": 9,
       "5": 0,
-      "6": 4
+      "6": 6
     },
     "b": {
       "0": [
@@ -12331,33 +12331,33 @@
         0
       ],
       "3": [
-        2,
-        0
+        1,
+        2
       ],
       "4": [
-        4,
+        6,
         0,
         0,
         0
       ],
       "5": [
-        4,
+        6,
         0
       ],
       "6": [
         0,
-        4
+        6
       ],
       "7": [
         0,
-        4
+        6
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "fe3c8854770ce092311ac662ca41a5f8cd931f43"
+    "hash": "21380b9c9b8e287256c7a49307a84d3f53544848"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\App.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\App.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\App.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12538,10 +12538,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4b40017ff8770cee01db7f8b40e7436b3a6bc885"
+    "hash": "50990b1aa8cd75e70b05c3120fc347e39f27a7bd"
   },
-  "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\index.js": {
-    "path": "C:\\Users\\Petrus\\Documents\\AccountabilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\index.js",
+  "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\index.js": {
+    "path": "C:\\Users\\train\\Downloads\\AccounibilityHack\\Full-Stack-Project---Accountability-Hack\\mern_stack\\frontend\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -12573,6 +12573,6 @@
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "dae7b3aa51116328d015da1efc2b7379b0f9a801"
+    "hash": "eda210e2d1ba4667ed067382210c2636515cb2fe"
   }
 }

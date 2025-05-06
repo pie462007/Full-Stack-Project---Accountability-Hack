@@ -201,7 +201,7 @@ const getAllHabitsForLeaderboard = async (req, res) => {
         console.log('Requested frequency:', frequency);
 
         // First get all habits
-        const habits = await Habit.find();
+        const habits = await Habit.find().lean();
         console.log('Total habits found:', habits.length);
 
         // Get all users
@@ -211,7 +211,7 @@ const getAllHabitsForLeaderboard = async (req, res) => {
 
         // Add user email to each habit
         const habitsWithUser = habits.map(habit => ({
-            ...habit.toObject(),
+            ...habit,
             user_id: {
                 email: userMap.get(habit.user_id)
             }
