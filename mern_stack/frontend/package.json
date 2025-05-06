@@ -39,6 +39,8 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^14.3.2",
+    "cypress-real-events": "^1.14.0",
     "jest": "^27.5.1"
   }
 }
