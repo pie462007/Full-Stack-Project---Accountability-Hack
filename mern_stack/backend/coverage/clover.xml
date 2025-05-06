@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746559583770" clover="3.2.0">
-  <project timestamp="1746559583770" name="All files">
-    <metrics statements="372" coveredstatements="323" conditionals="136" coveredconditionals="110" methods="37" coveredmethods="27" elements="545" coveredelements="460" complexity="0" loc="372" ncloc="372" packages="3" files="5" classes="5"/>
+<coverage generated="1746564891821" clover="3.2.0">
+  <project timestamp="1746564891821" name="All files">
+    <metrics statements="372" coveredstatements="367" conditionals="136" coveredconditionals="132" methods="37" coveredmethods="36" elements="545" coveredelements="535" complexity="0" loc="372" ncloc="372" packages="3" files="5" classes="5"/>
     <package name="controllers">
-      <metrics statements="207" coveredstatements="181" conditionals="46" coveredconditionals="40" methods="27" coveredmethods="20"/>
-      <file name="habitController.js" path="C:\Users\mimia\Documents\CS 321\Account Hack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\controllers\habitController.js">
-        <metrics statements="113" coveredstatements="90" conditionals="34" coveredconditionals="28" methods="16" coveredmethods="9"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
+      <metrics statements="207" coveredstatements="203" conditionals="46" coveredconditionals="44" methods="27" coveredmethods="27"/>
+      <file name="habitController.js" path="C:\Users\train\Downloads\AccounibilityHack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\controllers\habitController.js">
+        <metrics statements="113" coveredstatements="112" conditionals="34" coveredconditionals="32" methods="16" coveredmethods="16"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="8" count="4" type="stmt"/>
         <line num="9" count="4" type="stmt"/>
@@ -29,17 +29,17 @@
         <line num="37" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="67" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
         <line num="69" count="1" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
-        <line num="74" count="2" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
         <line num="75" count="7" type="stmt"/>
         <line num="77" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="78" count="2" type="stmt"/>
@@ -47,7 +47,7 @@
         <line num="83" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="84" count="3" type="stmt"/>
         <line num="87" count="2" type="stmt"/>
-        <line num="91" count="2" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
         <line num="92" count="2" type="stmt"/>
         <line num="94" count="2" type="stmt"/>
         <line num="95" count="2" type="stmt"/>
@@ -59,7 +59,7 @@
         <line num="115" count="1" type="stmt"/>
         <line num="117" count="1" type="stmt"/>
         <line num="118" count="1" type="stmt"/>
-        <line num="122" count="2" type="stmt"/>
+        <line num="122" count="4" type="stmt"/>
         <line num="123" count="3" type="stmt"/>
         <line num="125" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="126" count="1" type="stmt"/>
@@ -67,7 +67,7 @@
         <line num="131" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="132" count="1" type="stmt"/>
         <line num="135" count="1" type="stmt"/>
-        <line num="138" count="2" type="stmt"/>
+        <line num="138" count="4" type="stmt"/>
         <line num="139" count="6" type="stmt"/>
         <line num="141" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="142" count="1" type="stmt"/>
@@ -75,7 +75,7 @@
         <line num="149" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="150" count="1" type="stmt"/>
         <line num="153" count="4" type="stmt"/>
-        <line num="155" count="2" type="stmt"/>
+        <line num="155" count="4" type="stmt"/>
         <line num="156" count="5" type="stmt"/>
         <line num="157" count="5" type="stmt"/>
         <line num="159" count="5" type="cond" truecount="2" falsecount="0"/>
@@ -99,28 +99,28 @@
         <line num="193" count="3" type="stmt"/>
         <line num="194" count="3" type="stmt"/>
         <line num="195" count="3" type="stmt"/>
-        <line num="198" count="2" type="stmt"/>
-        <line num="199" count="0" type="stmt"/>
-        <line num="200" count="0" type="stmt"/>
-        <line num="201" count="0" type="stmt"/>
-        <line num="204" count="0" type="stmt"/>
-        <line num="205" count="0" type="stmt"/>
-        <line num="208" count="0" type="stmt"/>
-        <line num="209" count="0" type="stmt"/>
-        <line num="210" count="0" type="stmt"/>
-        <line num="213" count="0" type="stmt"/>
-        <line num="221" count="0" type="stmt"/>
-        <line num="222" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="225" count="0" type="stmt"/>
-        <line num="228" count="0" type="stmt"/>
-        <line num="229" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="232" count="0" type="stmt"/>
-        <line num="238" count="0" type="stmt"/>
-        <line num="240" count="0" type="stmt"/>
-        <line num="241" count="0" type="stmt"/>
-        <line num="245" count="2" type="stmt"/>
+        <line num="198" count="4" type="stmt"/>
+        <line num="199" count="2" type="stmt"/>
+        <line num="200" count="2" type="stmt"/>
+        <line num="201" count="2" type="stmt"/>
+        <line num="204" count="2" type="stmt"/>
+        <line num="205" count="2" type="stmt"/>
+        <line num="208" count="2" type="stmt"/>
+        <line num="209" count="2" type="stmt"/>
+        <line num="210" count="6" type="stmt"/>
+        <line num="213" count="3" type="stmt"/>
+        <line num="221" count="1" type="stmt"/>
+        <line num="222" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="225" count="1" type="stmt"/>
+        <line num="228" count="1" type="stmt"/>
+        <line num="229" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="232" count="2" type="stmt"/>
+        <line num="238" count="1" type="stmt"/>
+        <line num="240" count="1" type="stmt"/>
+        <line num="241" count="1" type="stmt"/>
+        <line num="245" count="4" type="stmt"/>
       </file>
-      <file name="userController.js" path="C:\Users\mimia\Documents\CS 321\Account Hack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\controllers\userController.js">
+      <file name="userController.js" path="C:\Users\train\Downloads\AccounibilityHack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\controllers\userController.js">
         <metrics statements="94" coveredstatements="91" conditionals="12" coveredconditionals="12" methods="11" coveredmethods="11"/>
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -219,8 +219,8 @@
       </file>
     </package>
     <package name="models">
-      <metrics statements="35" coveredstatements="12" conditionals="18" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="habitModel.js" path="C:\Users\mimia\Documents\CS 321\Account Hack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\models\habitModel.js">
+      <metrics statements="35" coveredstatements="34" conditionals="18" coveredconditionals="18" methods="3" coveredmethods="2"/>
+      <file name="habitModel.js" path="C:\Users\train\Downloads\AccounibilityHack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\models\habitModel.js">
         <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -228,45 +228,45 @@
         <line num="46" count="0" type="stmt"/>
         <line num="53" count="2" type="stmt"/>
       </file>
-      <file name="userModel.js" path="C:\Users\mimia\Documents\CS 321\Account Hack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\models\userModel.js">
-        <metrics statements="30" coveredstatements="8" conditionals="18" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="32" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="53" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="56" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="77" count="2" type="stmt"/>
+      <file name="userModel.js" path="C:\Users\train\Downloads\AccounibilityHack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\models\userModel.js">
+        <metrics statements="30" coveredstatements="30" conditionals="18" coveredconditionals="18" methods="2" coveredmethods="2"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="38" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="53" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="56" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="59" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="65" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
       </file>
     </package>
     <package name="utils">
       <metrics statements="130" coveredstatements="130" conditionals="72" coveredconditionals="70" methods="7" coveredmethods="7"/>
-      <file name="streakUtil.js" path="C:\Users\mimia\Documents\CS 321\Account Hack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\utils\streakUtil.js">
+      <file name="streakUtil.js" path="C:\Users\train\Downloads\AccounibilityHack\Full-Stack-Project---Accountability-Hack\mern_stack\backend\utils\streakUtil.js">
         <metrics statements="130" coveredstatements="130" conditionals="72" coveredconditionals="70" methods="7" coveredmethods="7"/>
-        <line num="1" count="4" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
         <line num="3" count="9" type="stmt"/>
         <line num="4" count="9" type="stmt"/>
         <line num="6" count="9" type="cond" truecount="2" falsecount="0"/>
@@ -301,7 +301,7 @@
         <line num="53" count="5" type="cond" truecount="4" falsecount="0"/>
         <line num="54" count="3" type="stmt"/>
         <line num="57" count="5" type="stmt"/>
-        <line num="60" count="4" type="stmt"/>
+        <line num="60" count="6" type="stmt"/>
         <line num="61" count="9" type="stmt"/>
         <line num="62" count="9" type="stmt"/>
         <line num="63" count="9" type="stmt"/>
@@ -345,7 +345,7 @@
         <line num="126" count="5" type="cond" truecount="4" falsecount="0"/>
         <line num="127" count="1" type="stmt"/>
         <line num="130" count="5" type="stmt"/>
-        <line num="134" count="4" type="stmt"/>
+        <line num="134" count="6" type="stmt"/>
         <line num="136" count="11" type="stmt"/>
         <line num="137" count="11" type="stmt"/>
         <line num="139" count="11" type="cond" truecount="2" falsecount="0"/>
@@ -380,7 +380,7 @@
         <line num="197" count="7" type="stmt"/>
         <line num="198" count="7" type="stmt"/>
         <line num="200" count="7" type="stmt"/>
-        <line num="203" count="4" type="stmt"/>
+        <line num="203" count="6" type="stmt"/>
         <line num="205" count="6" type="stmt"/>
         <line num="206" count="8" type="stmt"/>
         <line num="207" count="3" type="stmt"/>
@@ -395,7 +395,7 @@
         <line num="220" count="6" type="stmt"/>
         <line num="222" count="6" type="stmt"/>
         <line num="223" count="6" type="stmt"/>
-        <line num="226" count="4" type="stmt"/>
+        <line num="226" count="6" type="stmt"/>
       </file>
     </package>
   </project>
